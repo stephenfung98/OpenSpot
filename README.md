@@ -1,10 +1,12 @@
 # OpenSpot
 Allows users to rent out their driveways for hours/weeks/months at a time.
 
-Group Impacted: Big city homeowners and commuters 
+<h2>Group Impacted:</h2> 
+  - Big city homeowners
+  - Commuters 
 
-How are they impacted:
-  
+<h2> How are they impacted: </h2>
+ 
   <b>Users</b>
   - Time saved
   - Less congestion
