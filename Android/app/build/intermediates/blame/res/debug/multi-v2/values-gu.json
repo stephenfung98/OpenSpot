@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Isaac Lu\\AndroidStudioProjects\\OpenSpot\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
+            "outputFile": "C:\\Users\\Isaac Lu\\Documents\\GitHub\\OpenSpot\\Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Isaac Lu\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\22cae18d9c0e85b4b444b2673c3081a0\\res\\values-gu\\values-gu.xml",
