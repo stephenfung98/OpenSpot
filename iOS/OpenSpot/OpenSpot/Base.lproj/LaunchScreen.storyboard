@@ -21,18 +21,17 @@
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="fTy-fr-2OG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Open Spot" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-Lm-BgN">
-                                        <rect key="frame" x="86" y="412" width="243" height="72"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ss-aD-thT">
+                                        <rect key="frame" x="92.5" y="417.5" width="229" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="51"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5yh-Lm-BgN" firstAttribute="centerX" secondItem="fTy-fr-2OG" secondAttribute="centerX" id="kpv-t3-Hf5"/>
-                                    <constraint firstItem="5yh-Lm-BgN" firstAttribute="centerY" secondItem="fTy-fr-2OG" secondAttribute="centerY" id="rnb-JV-Stw"/>
+                                    <constraint firstItem="6Ss-aD-thT" firstAttribute="centerX" secondItem="fTy-fr-2OG" secondAttribute="centerX" id="Cyp-qX-lQR"/>
+                                    <constraint firstItem="6Ss-aD-thT" firstAttribute="centerY" secondItem="fTy-fr-2OG" secondAttribute="centerY" id="Pev-2u-BzK"/>
                                 </constraints>
                             </view>
                         </subviews>
