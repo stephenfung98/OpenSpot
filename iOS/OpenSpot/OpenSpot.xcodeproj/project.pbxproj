@@ -15,6 +15,10 @@
 		3E3C9C9722176FB000A88600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3C9C9522176FB000A88600 /* LaunchScreen.storyboard */; };
 		3E3C9CA222176FB000A88600 /* OpenSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C9CA122176FB000A88600 /* OpenSpotTests.swift */; };
 		3E3C9CAD22176FB000A88600 /* OpenSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C9CAC22176FB000A88600 /* OpenSpotUITests.swift */; };
+		3EA2AA422218C0FB00224DDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EA2AA412218C0FB00224DDA /* GoogleService-Info.plist */; };
+		4C60D7186D2BFFE31132AEDF /* Pods_OpenSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0796D1BA3492B57B06B3A331 /* Pods_OpenSpot.framework */; };
+		8A791882EEB0B38500113EB9 /* Pods_OpenSpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1B849FB2264CD49257BC69 /* Pods_OpenSpotUITests.framework */; };
+		E5AF67C6227CC64E196F01C6 /* Pods_OpenSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DCEBC7F6EF4FF3D005EA02 /* Pods_OpenSpotTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0248210C928DF3130E7E6E5F /* Pods-OpenSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpot.debug.xcconfig"; path = "Target Support Files/Pods-OpenSpot/Pods-OpenSpot.debug.xcconfig"; sourceTree = "<group>"; };
+		0796D1BA3492B57B06B3A331 /* Pods_OpenSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C56E80969000CBA21F2951 /* Pods-OpenSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpot.release.xcconfig"; path = "Target Support Files/Pods-OpenSpot/Pods-OpenSpot.release.xcconfig"; sourceTree = "<group>"; };
+		2854F5D1C33F1BC07BCB6106 /* Pods-OpenSpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpotUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSpotUITests/Pods-OpenSpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		33547ADBA8A2B1DB1F15F228 /* Pods-OpenSpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpotUITests.release.xcconfig"; path = "Target Support Files/Pods-OpenSpotUITests/Pods-OpenSpotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3E3C9C8722176FAE00A88600 /* OpenSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C9C8A22176FAE00A88600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E3C9C8C22176FAE00A88600 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		3E3C9CA822176FB000A88600 /* OpenSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C9CAC22176FB000A88600 /* OpenSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSpotUITests.swift; sourceTree = "<group>"; };
 		3E3C9CAE22176FB000A88600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EA2AA412218C0FB00224DDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B9A1FB9F359B2F37E499603 /* Pods-OpenSpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpotTests.release.xcconfig"; path = "Target Support Files/Pods-OpenSpotTests/Pods-OpenSpotTests.release.xcconfig"; sourceTree = "<group>"; };
+		5EA5A6ABAACA54187062F90F /* Pods-OpenSpotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpotTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSpotTests/Pods-OpenSpotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4DCEBC7F6EF4FF3D005EA02 /* Pods_OpenSpotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD1B849FB2264CD49257BC69 /* Pods_OpenSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C60D7186D2BFFE31132AEDF /* Pods_OpenSpot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5AF67C6227CC64E196F01C6 /* Pods_OpenSpotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A791882EEB0B38500113EB9 /* Pods_OpenSpotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B38F6C6474AF87AD05843EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0248210C928DF3130E7E6E5F /* Pods-OpenSpot.debug.xcconfig */,
+				24C56E80969000CBA21F2951 /* Pods-OpenSpot.release.xcconfig */,
+				5EA5A6ABAACA54187062F90F /* Pods-OpenSpotTests.debug.xcconfig */,
+				5B9A1FB9F359B2F37E499603 /* Pods-OpenSpotTests.release.xcconfig */,
+				2854F5D1C33F1BC07BCB6106 /* Pods-OpenSpotUITests.debug.xcconfig */,
+				33547ADBA8A2B1DB1F15F228 /* Pods-OpenSpotUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3E3C9C7E22176FAE00A88600 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +113,8 @@
 				3E3C9CA022176FB000A88600 /* OpenSpotTests */,
 				3E3C9CAB22176FB000A88600 /* OpenSpotUITests */,
 				3E3C9C8822176FAE00A88600 /* Products */,
+				2B38F6C6474AF87AD05843EF /* Pods */,
+				BCC43BDDBA6F219778930976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +137,7 @@
 				3E3C9C9022176FAE00A88600 /* Main.storyboard */,
 				3E3C9C9322176FB000A88600 /* Assets.xcassets */,
 				3E3C9C9522176FB000A88600 /* LaunchScreen.storyboard */,
+				3EA2AA412218C0FB00224DDA /* GoogleService-Info.plist */,
 				3E3C9C9822176FB000A88600 /* Info.plist */,
 			);
 			path = OpenSpot;
@@ -128,6 +161,16 @@
 			path = OpenSpotUITests;
 			sourceTree = "<group>";
 		};
+		BCC43BDDBA6F219778930976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0796D1BA3492B57B06B3A331 /* Pods_OpenSpot.framework */,
+				D4DCEBC7F6EF4FF3D005EA02 /* Pods_OpenSpotTests.framework */,
+				DD1B849FB2264CD49257BC69 /* Pods_OpenSpotUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3C9CB122176FB000A88600 /* Build configuration list for PBXNativeTarget "OpenSpot" */;
 			buildPhases = (
+				6535FF1B3FDD1EAF3ECB168E /* [CP] Check Pods Manifest.lock */,
 				3E3C9C8322176FAE00A88600 /* Sources */,
 				3E3C9C8422176FAE00A88600 /* Frameworks */,
 				3E3C9C8522176FAE00A88600 /* Resources */,
+				B64E6C17D3DD4FAB790254D5 /* [CP] Embed Pods Frameworks */,
+				2250C4921DE6E833F1E287EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3C9CB422176FB000A88600 /* Build configuration list for PBXNativeTarget "OpenSpotTests" */;
 			buildPhases = (
+				E73CDB261587D7AD81408E73 /* [CP] Check Pods Manifest.lock */,
 				3E3C9C9922176FB000A88600 /* Sources */,
 				3E3C9C9A22176FB000A88600 /* Frameworks */,
 				3E3C9C9B22176FB000A88600 /* Resources */,
@@ -170,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3C9CB722176FB000A88600 /* Build configuration list for PBXNativeTarget "OpenSpotUITests" */;
 			buildPhases = (
+				25D4168767C715E00F04622B /* [CP] Check Pods Manifest.lock */,
 				3E3C9CA422176FB000A88600 /* Sources */,
 				3E3C9CA522176FB000A88600 /* Frameworks */,
 				3E3C9CA622176FB000A88600 /* Resources */,
@@ -233,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C9C9722176FB000A88600 /* LaunchScreen.storyboard in Resources */,
+				3EA2AA422218C0FB00224DDA /* GoogleService-Info.plist in Resources */,
 				3E3C9C9422176FB000A88600 /* Assets.xcassets in Resources */,
 				3E3C9C9222176FAE00A88600 /* Main.storyboard in Resources */,
 			);
@@ -253,6 +302,125 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2250C4921DE6E833F1E287EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSpot/Pods-OpenSpot-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSpot/Pods-OpenSpot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25D4168767C715E00F04622B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSpotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6535FF1B3FDD1EAF3ECB168E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSpot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B64E6C17D3DD4FAB790254D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSpot/Pods-OpenSpot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSpot/Pods-OpenSpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73CDB261587D7AD81408E73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSpotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E3C9C8322176FAE00A88600 /* Sources */ = {
@@ -434,6 +602,7 @@
 		};
 		3E3C9CB222176FB000A88600 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0248210C928DF3130E7E6E5F /* Pods-OpenSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +621,7 @@
 		};
 		3E3C9CB322176FB000A88600 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24C56E80969000CBA21F2951 /* Pods-OpenSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +640,7 @@
 		};
 		3E3C9CB522176FB000A88600 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EA5A6ABAACA54187062F90F /* Pods-OpenSpotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +662,7 @@
 		};
 		3E3C9CB622176FB000A88600 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B9A1FB9F359B2F37E499603 /* Pods-OpenSpotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +684,7 @@
 		};
 		3E3C9CB822176FB000A88600 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2854F5D1C33F1BC07BCB6106 /* Pods-OpenSpotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +705,7 @@
 		};
 		3E3C9CB922176FB000A88600 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33547ADBA8A2B1DB1F15F228 /* Pods-OpenSpotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
