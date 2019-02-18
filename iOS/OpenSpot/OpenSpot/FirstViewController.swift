@@ -15,6 +15,12 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         
         if self.storyboard != nil {
             let authUI = FUIAuth.defaultAuthUI()
+            authUI?.isSignInWithEmailHidden = true
+            FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
+            authUI?.delegate = self
+            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!),]
+            
+            authUI?.providers = providers
             let authViewController = authUI!.authViewController()
             self.present(authViewController, animated: false, completion: nil)
         }
@@ -32,11 +38,11 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
             authUI?.isSignInWithEmailHidden = true
             FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
             authUI?.delegate = self
-            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!),]
+            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
             
             authUI?.providers = providers
             let authViewController = authUI!.authViewController()
-            self.present(authViewController, animated: true, completion: nil)
+            self.present(authViewController, animated: false, completion: nil)
         }
     }
     
