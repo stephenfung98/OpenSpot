@@ -25,24 +25,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var callbacks : PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        FirebaseApp.initializeApp(this)
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-
-        // Choose authentication providers
-        val providers = arrayListOf(
-            AuthUI.IdpConfig.PhoneBuilder().build(),
-            AuthUI.IdpConfig.EmailBuilder().build()
-        )
-
-        // Create and launch sign-in intent
-        startActivityForResult(
-            AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build(),
-            RC_SIGN_IN
-        )
+        setContentView(R.layout.activity_main)
     }
 }
 
