@@ -192,7 +192,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Stephen Fung";
+				ORGANIZATIONNAME = "Jay Lliguichushca";
 				TargetAttributes = {
 					3E3C9C8622176FAE00A88600 = {
 						CreatedOnToolsVersion = 10.1;
@@ -437,13 +437,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5FS4K33MY;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				INFOPLIST_FILE = OpenSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.sfung3.OpenSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,13 +455,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5FS4K33MY;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				INFOPLIST_FILE = OpenSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.sfung3.OpenSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
