@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme.Launcher" >
-        <activity android:name="com.example.openspot.MainActivity" >
+        <activity
+            android:name="com.example.openspot.MainActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

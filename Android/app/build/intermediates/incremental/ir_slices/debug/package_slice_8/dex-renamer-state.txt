@@ -1,4 +1,4 @@
-#Thu Feb 14 14:31:01 EST 2019
-base.0=C\:\\Users\\Isaac Lu\\AndroidStudioProjects\\OpenSpot\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+#Mon Feb 18 19:27:25 EST 2019
+base.0=C\:\\Users\\Isaac Lu\\Documents\\GitHub\\OpenSpot\\Android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
 path.0=classes.dex
 renamed.0=classes.dex
