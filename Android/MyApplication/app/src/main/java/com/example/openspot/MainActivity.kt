@@ -14,6 +14,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import java.util.*
+import java.util.Arrays.asList
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,9 +29,23 @@ class MainActivity : AppCompatActivity() {
     lateinit var callbacks : PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        FirebaseApp.initializeApp(this)
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+
+        val providers = arrayListOf(
+            AuthUI.IdpConfig.PhoneBuilder().build(),
+            AuthUI.IdpConfig.EmailBuilder().build()
+        )
+
+    // Create and launch sign-in intent
+        startActivityForResult(
+            AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .build(),
+            RC_SIGN_IN)
     }
 }
 
