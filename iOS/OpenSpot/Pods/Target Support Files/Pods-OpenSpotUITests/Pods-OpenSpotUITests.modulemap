@@ -1,0 +1,6 @@
+framework module Pods_OpenSpotUITests {
+  umbrella header "Pods-OpenSpotUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
