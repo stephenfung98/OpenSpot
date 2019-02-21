@@ -31,14 +31,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-1X-5TN">
-                                <rect key="frame" x="152" y="180" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN OUT"/>
-                                <connections>
-                                    <action selector="SignOut:" destination="9pv-A4-QxB" eventType="touchUpInside" id="08s-mW-4x5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -49,7 +41,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Parking" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Parking" image="Parking" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Reservations" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Reservations" image="Reservations" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,39 +111,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-36-nKo">
-                                <rect key="frame" x="125.5" y="426.5" width="163" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by ThirdViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgk-e7-Up4">
-                                <rect key="frame" x="107" y="477.5" width="200" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I1b-nf-Z2w">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="F0k-WW-dAh" customClass="MenuOptionCell" customModule="OpenSpot">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F0k-WW-dAh" id="wu2-IS-Uaz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Moe-aE-6hR" id="Rnz-AX-E2Z"/>
+                                    <outlet property="delegate" destination="Moe-aE-6hR" id="qHd-rQ-4KS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mgk-e7-Up4" firstAttribute="top" secondItem="cPG-36-nKo" secondAttribute="bottom" constant="8" symbolic="YES" id="2p9-26-qPC"/>
-                            <constraint firstAttribute="centerX" secondItem="cPG-36-nKo" secondAttribute="centerX" id="8Mu-PT-sq0"/>
-                            <constraint firstAttribute="centerY" secondItem="cPG-36-nKo" secondAttribute="centerY" id="c5W-KN-xYo"/>
-                            <constraint firstItem="mgk-e7-Up4" firstAttribute="centerX" secondItem="cPG-36-nKo" secondAttribute="centerX" id="nJA-Et-En3"/>
+                            <constraint firstItem="I1b-nf-Z2w" firstAttribute="bottom" secondItem="bV8-VX-d8s" secondAttribute="bottom" id="Kzp-IJ-Fce"/>
+                            <constraint firstItem="I1b-nf-Z2w" firstAttribute="top" secondItem="bV8-VX-d8s" secondAttribute="top" id="LKm-Gm-GGx"/>
+                            <constraint firstItem="I1b-nf-Z2w" firstAttribute="trailing" secondItem="bV8-VX-d8s" secondAttribute="trailing" id="ldt-KA-BML"/>
+                            <constraint firstItem="I1b-nf-Z2w" firstAttribute="leading" secondItem="bV8-VX-d8s" secondAttribute="leading" id="w5b-3m-wAo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bV8-VX-d8s"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="nhf-UY-JWt"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="nhf-UY-JWt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menuTableView" destination="I1b-nf-Z2w" id="aRl-1m-2z6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuy-wP-77j" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="0.0"/>
+            <point key="canvasLocation" x="1417.3913043478262" y="0.0"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Parking" width="37.5" height="37.5"/>
+        <image name="Reservations" width="37.5" height="37.5"/>
+        <image name="Settings" width="37.5" height="37.5"/>
     </resources>
 </document>
