@@ -9,6 +9,7 @@ target 'OpenSpot' do
 pod 'Firebase/Core'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Phone'
+pod 'Firebase/Firestore'
 
   target 'OpenSpotTests' do
     inherit! :search_paths

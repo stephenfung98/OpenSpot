@@ -18,6 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        let db = Firestore.firestore()
+        
+        let currentUser = Auth.auth().currentUser
+        db.collection("Users").document((currentUser?.uid)!).setData([
+            "first": "Stephen",
+            "last": "Fung",
+            "phoneNumber": currentUser?.phoneNumber as Any,
+            "email": "sfung3@buffalo.edu",
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(currentUser?.uid)")
+            }
+        }
+        
         return true
     }
     
