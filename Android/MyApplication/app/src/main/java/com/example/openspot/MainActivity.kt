@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.util.Log
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -14,8 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import java.util.*
-import java.util.Arrays.asList
 
 
 
@@ -23,10 +22,8 @@ import java.util.Arrays.asList
 class MainActivity : AppCompatActivity() {
 
     private companion object {
-        var RC_SIGN_IN = 1
+        const val RC_SIGN_IN = 1
     }
-
-    lateinit var callbacks : PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
     override fun onCreate(savedInstanceState: Bundle?) {
         FirebaseApp.initializeApp(this)
