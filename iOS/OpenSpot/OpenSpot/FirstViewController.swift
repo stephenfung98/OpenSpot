@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var zoomButton: UIButton!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 10000
+    let regionInMeters: Double = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,10 +22,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18f-fM-nWD">
-                                <rect key="frame" x="307" y="550" width="48" height="48"/>
+                                <rect key="frame" x="323" y="566" width="45" height="45"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="0.80492829623287676" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="59W-N4-gcd"/>
+                                    <constraint firstAttribute="height" constant="45" id="bH9-oZ-9Co"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="zoomIcon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="Press:" destination="9pv-A4-QxB" eventType="touchDown" id="ZvT-cE-PI2"/>
                                 </connections>
@@ -35,10 +46,10 @@
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="kQ0-Lg-waN" secondAttribute="bottom" id="4LH-4a-YMw"/>
                             <constraint firstItem="kQ0-Lg-waN" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="BpI-uC-ada"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="18f-fM-nWD" secondAttribute="trailing" constant="20" id="Egr-Xr-Fsa"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="18f-fM-nWD" secondAttribute="trailing" constant="7" id="Egr-Xr-Fsa"/>
                             <constraint firstItem="kQ0-Lg-waN" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="cVx-4a-55B"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kQ0-Lg-waN" secondAttribute="trailing" id="dG4-6d-2cK"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="18f-fM-nWD" secondAttribute="bottom" constant="20" id="s3y-oo-TWc"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="18f-fM-nWD" secondAttribute="bottom" constant="7" id="s3y-oo-TWc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -50,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371.01449275362324" y="1003.7946428571428"/>
+            <point key="canvasLocation" x="-372" y="1003.4482758620691"/>
         </scene>
         <!--Reservations-->
         <scene sceneID="wg7-f3-ORb">
@@ -159,6 +170,6 @@
         <image name="Parking" width="37.5" height="37.5"/>
         <image name="Reservations" width="37.5" height="37.5"/>
         <image name="Settings" width="37.5" height="37.5"/>
-        <image name="zoomIcon" width="48" height="48"/>
+        <image name="zoomIcon" width="180" height="180"/>
     </resources>
 </document>
