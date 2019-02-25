@@ -1,5 +1,6 @@
 package com.example.openspot
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.support.v7.app.AppCompatActivity
@@ -12,6 +13,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.firebase.auth.FirebaseAuth
 
 class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
 
@@ -24,7 +26,15 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val user = FirebaseAuth.getInstance().currentUser
         super.onCreate(savedInstanceState)
+
+        if (user == null) {
+            val intent = Intent(this@MapsActivity2, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         setContentView(R.layout.activity_navigation)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
