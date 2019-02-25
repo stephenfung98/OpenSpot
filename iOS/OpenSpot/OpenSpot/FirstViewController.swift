@@ -8,25 +8,78 @@
 
 import UIKit
 import FirebaseUI
+import MapKit
+import CoreLocation
 
 class FirstViewController: UIViewController, FUIAuthDelegate {
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if Auth.auth().currentUser != nil {
-            //do something :D
-        } else {
-            let authUI = FUIAuth.defaultAuthUI()
-            authUI?.isSignInWithEmailHidden = true
-            FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
-            authUI?.delegate = self
-            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
-            
-            authUI?.providers = providers
-            let authViewController = authUI!.authViewController()
-            self.present(authViewController, animated: false, completion: nil)
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 10000
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        checkLocationServices()
+    }
+    
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    
+    func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
         }
     }
     
     
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            centerViewOnUserLocation()
+            locationManager.startUpdatingLocation()
+            break
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+}
+
+
+extension FirstViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
 }
