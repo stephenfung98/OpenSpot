@@ -14,6 +14,7 @@ import CoreLocation
 class FirstViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var zoomButton: UIButton!
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
@@ -23,6 +24,10 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         checkLocationServices()
     }
     
+    @IBAction func Press(_ sender: UIButton) {
+        centerViewOnUserLocation()
+    }
+
     
     func setupLocationManager() {
         locationManager.delegate = self
@@ -53,7 +58,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             centerViewOnUserLocation()
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
             break
         case .denied:
             // Show alert instructing them how to turn on permissions
@@ -70,14 +75,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
 }
 
 
-extension FirstViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-        mapView.setRegion(region, animated: true)
-    }
-    
+extension FirstViewController: CLLocationManagerDelegate {    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
