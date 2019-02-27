@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ss-aD-thT">
-                                        <rect key="frame" x="92.666666666666686" y="417.66666666666669" width="229" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="51"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="82" y="415" width="250.5" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <color key="textColor" red="0.18431372549019609" green="0.23529411764705882" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.91764705882352937" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6Ss-aD-thT" firstAttribute="centerX" secondItem="fTy-fr-2OG" secondAttribute="centerX" id="Cyp-qX-lQR"/>
                                     <constraint firstItem="6Ss-aD-thT" firstAttribute="centerY" secondItem="fTy-fr-2OG" secondAttribute="centerY" id="Pev-2u-BzK"/>
