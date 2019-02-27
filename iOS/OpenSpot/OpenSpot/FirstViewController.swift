@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import FirebaseUI
 
-class FirstViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class FirstViewController: UIViewController, FUIAuthDelegate {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser != nil {
+            //do something :D
+        } else {
+            let authUI = FUIAuth.defaultAuthUI()
+            authUI?.isSignInWithEmailHidden = true
+            FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
+            authUI?.delegate = self
+            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
+            
+            authUI?.providers = providers
+            let authViewController = authUI!.authViewController()
+            self.present(authViewController, animated: false, completion: nil)
+        }
     }
-
-
+    
+    
 }
-
