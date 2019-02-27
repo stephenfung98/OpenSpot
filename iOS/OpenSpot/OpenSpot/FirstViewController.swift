@@ -23,7 +23,6 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkLocationServices()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +30,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         
         if Auth.auth().currentUser != nil {
             //do something :D
+            checkLocationServices()
         } else {
             let authUI = FUIAuth.defaultAuthUI()
             authUI?.isSignInWithEmailHidden = true
