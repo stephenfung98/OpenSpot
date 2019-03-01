@@ -14,6 +14,11 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
+import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
+import android.support.v7.app.ActionBar
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_navigation.*
 
 class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
 
@@ -23,6 +28,29 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
 
     companion object {
         private const val MY_LOCATION_REQUEST_CODE= 1
+    }
+
+    lateinit var toolbar: ActionBar
+
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_home -> {
+                val homeFragment = HomeFragment.newInstance()
+                openFragment(homeFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_dashboard -> {
+                val reservationFragment = ReservationFragment.newInstance()
+                openFragment(reservationFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_notifications -> {
+                val settingFragment = SettingFragment.newInstance()
+                openFragment(settingFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +64,9 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
         }
 
         setContentView(R.layout.activity_navigation)
+        toolbar = supportActionBar!!
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -55,7 +86,7 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         // Add a marker in Sydney and move the camera
-        mMap.getUiSettings().isZoomControlsEnabled = true
+        mMap.uiSettings.isZoomControlsEnabled = true
         setUpMap()
     }
     private fun setUpMap() {
@@ -67,18 +98,24 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
             )
             return
         }
-        // 1
-        mMap.isMyLocationEnabled = true
+            // 1
+            mMap.isMyLocationEnabled = true
 
-        // 2
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-            // Got last known location. In some rare situations this can be null.
-            // 3
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16f))
+            // 2
+            fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
+                // Got last known location. In some rare situations this can be null.
+                // 3
+                if (location != null) {
+                    lastLocation = location
+                    val currentLatLng = LatLng(lastLocation.latitude, lastLocation.longitude)
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16f))
+                }
             }
-        }
+    }
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

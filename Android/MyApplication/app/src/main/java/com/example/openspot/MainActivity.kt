@@ -7,11 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
-import com.google.android.gms.auth.api.Auth
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,10 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         FirebaseApp.initializeApp(this)
-        setTheme(R.style.AppTheme)
 
         super.onCreate(savedInstanceState)
-
+        setTheme(R.style.AppTheme)
         val providers = arrayListOf(
             AuthUI.IdpConfig.PhoneBuilder().build(),
             AuthUI.IdpConfig.EmailBuilder().build()
@@ -55,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
-                val intent = Intent(this@MainActivity, MapsActivity2::class.java)
+                val intent = Intent(this@MainActivity, NavigationActivity::class.java)
                 startActivity(intent)
                 finish()
             }
