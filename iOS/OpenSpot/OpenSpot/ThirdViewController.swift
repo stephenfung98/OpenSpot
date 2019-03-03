@@ -51,21 +51,24 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
         case 3:
             print("3")
         case 4:
-            try! Auth.auth().signOut()
-            
-            if self.storyboard != nil {
-                let authUI = FUIAuth.defaultAuthUI()
-                authUI?.isSignInWithEmailHidden = true
-                FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
-                authUI?.delegate = self
-                let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!),]
-                
-                authUI?.providers = providers
-                let authViewController = authUI!.authViewController()
-                self.present(authViewController, animated: false, completion: nil)
-            }
+            logOut()
         default:
             print("else")
+        }
+    }
+    
+    func logOut(){
+        try! Auth.auth().signOut()
+        if self.storyboard != nil {
+            let authUI = FUIAuth.defaultAuthUI()
+            //                authUI?.isSignInWithEmailHidden = true
+            FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
+            authUI?.delegate = self
+            let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!),]
+            
+            authUI?.providers = providers
+            let authViewController = authUI!.authViewController()
+            self.present(authViewController, animated: false, completion: nil)
         }
     }
     

@@ -33,11 +33,10 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
             checkLocationServices()
         } else {
             let authUI = FUIAuth.defaultAuthUI()
-            authUI?.isSignInWithEmailHidden = true
+//            authUI?.isSignInWithEmailHidden = true
             FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
             authUI?.delegate = self
             let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
-            
             authUI?.providers = providers
             let authViewController = authUI!.authViewController()
             self.present(authViewController, animated: false, completion: nil)

@@ -6,21 +6,25 @@ target 'OpenSpot' do
   use_frameworks!
 
   # Pods for OpenSpot
-pod 'Firebase/Core'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Firestore'
 
+
   target 'OpenSpotTests' do
     inherit! :search_paths
     # Pods for testing
-pod 'Firebase/Firestore'
+pod 'FirebaseUI/Auth'
   end
+
 
   target 'OpenSpotUITests' do
     inherit! :search_paths
     # Pods for testing
+pod 'FirebaseUI/Auth'
+pod 'FirebaseUI/Phone'
 pod 'Firebase/Firestore'
   end
-
 end
+
+
