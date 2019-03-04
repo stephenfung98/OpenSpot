@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.Preference
 import android.support.v4.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -32,6 +33,7 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
 
     lateinit var toolbar: ActionBar
 
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -39,12 +41,12 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
                 openFragment(homeFragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_reservations -> {
                 val reservationFragment = ReservationFragment.newInstance()
                 openFragment(reservationFragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.navigation_settings -> {
                 val settingFragment = SettingFragment.newInstance()
                 openFragment(settingFragment)
                 return@OnNavigationItemSelectedListener true
@@ -52,6 +54,7 @@ class MapsActivity2 : AppCompatActivity(), OnMapReadyCallback {
         }
         false
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val user = FirebaseAuth.getInstance().currentUser

@@ -1,8 +1,11 @@
 package com.example.openspot
 
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.preference.PreferenceFragmentCompat
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +16,9 @@ import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import android.preference.Preference.OnPreferenceClickListener
+import android.support.v7.preference.Preference
+import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class ReservationFragment : Fragment() {
@@ -61,10 +67,23 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
 }
 
-class SettingFragment : Fragment() {
+class SettingFragment : PreferenceFragmentCompat() {
+//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View{
+//        return inflater.inflate(R.layout.settings, container, false)
+//    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View{
-        return inflater.inflate(R.layout.settings, container, false)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
+        setPreferencesFromResource(R.xml.preferences, root_key)
+//        val button = findPreference("logout")
+//        button.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+//            AuthUI.getInstance()
+//                .signOut(this)
+//                .addOnCompleteListener {
+//                    startActivity(Intent(this@NavigationActivity, MainActivity::class.java))
+//                    finish()
+//                }
+//            true
+//        }
     }
 
     companion object {
