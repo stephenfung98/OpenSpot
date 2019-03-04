@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A4A917CA0668D7C95C4FC880A8C58CC"
+               BuildableName = "FirebaseAuthUI.bundle"
+               BlueprintName = "FirebaseUI-Auth-FirebaseAuthUI"
+               ReferencedContainer = "container:Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E3C9C9C22176FB000A88600"
-               BuildableName = "OpenSpotTests.xctest"
-               BlueprintName = "OpenSpotTests"
-               ReferencedContainer = "container:OpenSpot.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3C9C8622176FAE00A88600"
-            BuildableName = "OpenSpot.app"
-            BlueprintName = "OpenSpot"
-            ReferencedContainer = "container:OpenSpot.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3C9C8622176FAE00A88600"
-            BuildableName = "OpenSpot.app"
-            BlueprintName = "OpenSpot"
-            ReferencedContainer = "container:OpenSpot.xcodeproj">
+            BlueprintIdentifier = "3A4A917CA0668D7C95C4FC880A8C58CC"
+            BuildableName = "FirebaseAuthUI.bundle"
+            BlueprintName = "FirebaseUI-Auth-FirebaseAuthUI"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -67,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E3C9C8622176FAE00A88600"
-            BuildableName = "OpenSpot.app"
-            BlueprintName = "OpenSpot"
-            ReferencedContainer = "container:OpenSpot.xcodeproj">
+            BlueprintIdentifier = "3A4A917CA0668D7C95C4FC880A8C58CC"
+            BuildableName = "FirebaseAuthUI.bundle"
+            BlueprintName = "FirebaseUI-Auth-FirebaseAuthUI"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

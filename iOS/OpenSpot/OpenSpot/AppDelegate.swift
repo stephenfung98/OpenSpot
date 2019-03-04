@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  OpenSpot
 //
-//  Created by Stephen Fung on 2/15/19.
+//  Created by Stephen Fung and Jay Lliguichushca on 2/15/19.
 //  Copyright © 2019 Stephen Fung. All rights reserved.
 //
 
