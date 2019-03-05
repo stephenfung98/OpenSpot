@@ -1,5 +1,6 @@
 package com.example.openspot
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.firebase.ui.auth.AuthUI
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -62,7 +64,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
         mMap.uiSettings.isZoomControlsEnabled = true
         checkPermission()
     }
-
     private fun checkPermission() {
         if (ActivityCompat.checkSelfPermission(
                 context!!,
@@ -79,7 +80,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
         } else {
             Log.e("DB", "PERMISSION GRANTED")
         }
-
         mMap.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener(activity!!) { location ->
             // Got last known location. In some rare situations this can be null.
@@ -122,15 +122,14 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.preferences, root_key)
-//        val button = findPreference("logout")
-//        button.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-//            AuthUI.getInstance()
-//                .signOut(this)
-//                .addOnCompleteListener {
-//                    startActivity(Intent(this@NavigationActivity, MainActivity::class.java))
-//                    finish()
-//                }
-//            true
-//        }
+        val button = findPreference("logout")
+        button.setOnPreferenceClickListener {
+            AuthUI.getInstance()
+                .signOut(activity!!.baseContext)
+                .addOnCompleteListener {
+                    startActivity(Intent(activity, MainActivity::class.java))
+                }
+            true
+        }
     }
 }
