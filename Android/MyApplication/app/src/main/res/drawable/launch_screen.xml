@@ -5,7 +5,10 @@
     <!-- Your product logo - 144dp color version of your app icon -->
     <item>
         <bitmap
-                android:src="@drawable/lambo"
-                android:gravity="center"/>
+                android:src="@drawable/splash"
+                android:gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+        />
     </item>
 </layer-list>
