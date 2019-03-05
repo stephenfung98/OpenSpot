@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">OpenSpot</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="google_maps_api">AIzaSyBuQ8aNzH2t7-bkfYUz2llMRTCfRAHvqzU</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_reservations">Reservations</string>
+    <string name="title_settings">Settings</string>
 </resources>
