@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
 
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
-                val user = FirebaseAuth.getInstance().currentUser
                 val intent = Intent(this@MainActivity, NavigationActivity::class.java)
                 startActivity(intent)
                 finish()

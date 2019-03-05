@@ -64,7 +64,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
         mMap.uiSettings.isZoomControlsEnabled = true
         checkPermission()
     }
-
     private fun checkPermission() {
         if (ActivityCompat.checkSelfPermission(
                 context!!,
@@ -81,7 +80,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
         } else {
             Log.e("DB", "PERMISSION GRANTED")
         }
-
         mMap.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener(activity!!) { location ->
             // Got last known location. In some rare situations this can be null.
