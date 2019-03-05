@@ -3,34 +3,34 @@ package com.example.openspot
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.preference.Preference
-import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_navigation.*
 
 class NavigationActivity : AppCompatActivity() {
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val fragment11: Fragment = HomeFragment()
+    private val fragment22: Fragment = ReservationFragment()
+    private val fragment33: Fragment = SettingFragment()
+    private val fm = supportFragmentManager
+    private var active = fragment11
+
+    private var mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-//                message.setText(R.string.title_home)
-                val homeFragment = HomeFragment.newInstance()
-                openFragment(homeFragment)
+                fm.beginTransaction().hide(active).show(fragment11).commit()
+                active = fragment11
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_reservations -> {
-//                message.setText(R.string.title_reservations)
-                val reservationFragment = ReservationFragment.newInstance()
-                openFragment(reservationFragment)
+                fm.beginTransaction().hide(active).show(fragment22).commit()
+                active = fragment22
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_settings -> {
-//                message.setText(R.string.title_settings)
-                val notificationFragment = SettingFragment.newInstance()
-                openFragment(notificationFragment)
+                fm.beginTransaction().hide(active).show(fragment33).commit()
+                active = fragment33
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -47,14 +47,9 @@ class NavigationActivity : AppCompatActivity() {
             finish()
         }
         setContentView(R.layout.activity_navigation)
+        fm.beginTransaction().add(R.id.container, fragment33, "3").hide(fragment33).commit()
+        fm.beginTransaction().add(R.id.container, fragment22, "2").hide(fragment22).commit()
+        fm.beginTransaction().add(R.id.container, fragment11, "1").commit()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        val homeFragment = HomeFragment.newInstance()
-        openFragment(homeFragment)
-    }
-    private fun openFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
     }
 }
