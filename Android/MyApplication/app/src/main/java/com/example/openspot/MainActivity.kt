@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
+                .setLogo(R.drawable.hello)
                 .setAvailableProviders(providers)
                 .build(),
             RC_SIGN_IN)
