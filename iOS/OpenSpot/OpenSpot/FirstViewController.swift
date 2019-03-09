@@ -30,6 +30,10 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         
         if Auth.auth().currentUser != nil {
             //do something :D
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "UserInformationViewController")
+            self.present(controller, animated: true, completion: nil)
+            
             checkLocationServices()
         } else {
             let authUI = FUIAuth.defaultAuthUI()
