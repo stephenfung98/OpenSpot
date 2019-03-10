@@ -10,6 +10,7 @@ import UIKit
 import FirebaseUI
 import MapKit
 import CoreLocation
+import Firebase
 
 class FirstViewController: UIViewController, FUIAuthDelegate {
     
@@ -28,23 +29,33 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let db = Firestore.firestore()
+        let currentUser = Auth.auth().currentUser
+        
         if Auth.auth().currentUser != nil {
-            //do something :D
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "UserInformationViewController")
-            self.present(controller, animated: true, completion: nil)
-            
-            checkLocationServices()
-        } else {
+            db.collection("Users").document((currentUser?.uid)!).getDocument{ (document, error) in
+                if let document = document, !document.exists {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "NavigationController")
+                    self.present(controller, animated: false, completion: nil)
+                }
+                else{
+                    self.checkLocationServices()
+                }
+            }
+        }
+        else {
             let authUI = FUIAuth.defaultAuthUI()
-//            authUI?.isSignInWithEmailHidden = true
+            //            authUI?.isSignInWithEmailHidden = true
             FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
             authUI?.delegate = self
             let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
             authUI?.providers = providers
             let authViewController = authUI!.authViewController()
+            
             self.present(authViewController, animated: false, completion: nil)
         }
+        
     }
     
     func setupLocationManager() {
@@ -76,7 +87,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             centerViewOnUserLocation()
-//            locationManager.startUpdatingLocation()
+            //            locationManager.startUpdatingLocation()
             break
         case .denied:
             // Show alert instructing them how to turn on permissions

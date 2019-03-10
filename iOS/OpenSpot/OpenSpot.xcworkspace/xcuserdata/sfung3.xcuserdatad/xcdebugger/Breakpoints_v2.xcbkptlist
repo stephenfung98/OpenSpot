@@ -22,7 +22,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/AppDelegate.swift"
-            timestampString = "573805710.914953"
+            timestampString = "573820740.310846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -85,13 +85,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenSpot/FirstViewController.swift"
-            timestampString = "573802172.46939"
+            filePath = "OpenSpot/VehicleInformationViewController.swift"
+            timestampString = "573870065.682835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "finishClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -101,14 +101,62 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenSpot/VehicleInformationViewController.swift"
-            timestampString = "573805710.915135"
+            filePath = "OpenSpot/UserInformationViewController.swift"
+            timestampString = "573870065.683327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "finishClicked(_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "nextClicked(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenSpot.UserInformationViewController.nextClicked(Any) -&gt; ()"
+                  moduleName = "OpenSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sfung3/Developer/OpenSpot/iOS/OpenSpot/OpenSpot/UserInformationViewController.swift"
+                  timestampString = "573823598.72136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenSpot.UserInformationViewController.nextClicked(Any) -&gt; ()"
+                  moduleName = "OpenSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sfung3/Developer/OpenSpot/iOS/OpenSpot/OpenSpot/UserInformationViewController.swift"
+                  timestampString = "573823598.724031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "3984">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenSpot/UserInformationViewController.swift"
+            timestampString = "573870065.683401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "UserInformationViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

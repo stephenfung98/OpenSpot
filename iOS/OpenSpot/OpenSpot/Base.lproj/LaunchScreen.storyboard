@@ -21,12 +21,21 @@
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="fTy-fr-2OG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OpenSpot" translatesAutoresizingMaskIntoConstraints="NO" id="M4S-N7-Qzb">
-                                        <rect key="frame" x="65" y="318" width="284" height="261"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OpenSpot" translatesAutoresizingMaskIntoConstraints="NO" id="M4S-N7-Qzb">
+                                        <rect key="frame" x="65" y="317.66666666666669" width="284" height="261.00000000000006"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="284" id="LJr-9Z-O0h"/>
+                                            <constraint firstAttribute="height" constant="261" id="PLp-31-nX7"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18431372549019609" green="0.23529411764705882" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="M4S-N7-Qzb" firstAttribute="centerX" secondItem="fTy-fr-2OG" secondAttribute="centerX" id="4Ii-6b-DiX"/>
+                                    <constraint firstItem="M4S-N7-Qzb" firstAttribute="centerY" secondItem="fTy-fr-2OG" secondAttribute="centerY" id="8iD-dc-Psf"/>
+                                    <constraint firstItem="M4S-N7-Qzb" firstAttribute="centerX" secondItem="fTy-fr-2OG" secondAttribute="centerX" id="AV4-yS-v4E"/>
+                                    <constraint firstItem="M4S-N7-Qzb" firstAttribute="centerY" secondItem="fTy-fr-2OG" secondAttribute="centerY" id="pH3-DV-U7A"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

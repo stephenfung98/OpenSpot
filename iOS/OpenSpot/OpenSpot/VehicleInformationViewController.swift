@@ -15,21 +15,15 @@ class VehicleInformationViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func backClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "UserInformationViewController")
-        self.present(controller, animated: true, completion: nil)
-    }
-    
     @IBAction func skipClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "FirstViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
         self.present(controller, animated: true, completion: nil)
     }
     
     @IBAction func finishClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "FirstViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
         self.present(controller, animated: true, completion: nil)
     }
     
