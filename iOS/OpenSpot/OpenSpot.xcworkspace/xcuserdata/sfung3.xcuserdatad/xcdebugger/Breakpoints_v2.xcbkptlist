@@ -22,7 +22,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/AppDelegate.swift"
-            timestampString = "573820740.310846"
+            timestampString = "573890256.6888061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/VehicleInformationViewController.swift"
-            timestampString = "573870065.682835"
+            timestampString = "573890256.688983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "finishClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,61 +102,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/UserInformationViewController.swift"
-            timestampString = "573870065.683327"
+            timestampString = "573890256.6890481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "nextClicked(_:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenSpot.UserInformationViewController.nextClicked(Any) -&gt; ()"
-                  moduleName = "OpenSpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sfung3/Developer/OpenSpot/iOS/OpenSpot/OpenSpot/UserInformationViewController.swift"
-                  timestampString = "573823598.72136"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "652">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenSpot.UserInformationViewController.nextClicked(Any) -&gt; ()"
-                  moduleName = "OpenSpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sfung3/Developer/OpenSpot/iOS/OpenSpot/OpenSpot/UserInformationViewController.swift"
-                  timestampString = "573823598.724031"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "3984">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenSpot/UserInformationViewController.swift"
-            timestampString = "573870065.683401"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "UserInformationViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
