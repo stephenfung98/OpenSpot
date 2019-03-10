@@ -11,17 +11,19 @@ class VehicleInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vehicle_info)
 
+
+        val list = arrayListOf("Mercury","Jupiter","Venus","Earth","Saturn","Car Make")
+        val listSize = list.size -1
+
         val spinner: Spinner = findViewById(R.id.spinner)
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.planets_array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
+
+        val dataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list) {
+            override fun getCount(): Int {
+                return listSize // Truncate the list
+            }
         }
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = dataAdapter
+        spinner.setSelection(listSize)
     }
 }
