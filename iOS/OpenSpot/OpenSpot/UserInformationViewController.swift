@@ -26,7 +26,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "VehicleInformationViewController") as! VehicleInformationViewController
-        destinationVC.firstName = fullNameTextField.text!
+        destinationVC.fullName = fullNameTextField.text!
         destinationVC.email = emailTextField.text!
         destinationVC.dateOfBirth =  monthTextField.text! + "/" + dayTextField.text! + "/" + yearTextField.text!
         
