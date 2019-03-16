@@ -52,7 +52,6 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
             let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
             authUI?.providers = providers
             let authViewController = authUI!.authViewController()
-            
             self.present(authViewController, animated: false, completion: nil)
         }
         
@@ -102,7 +101,6 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
         }
     }
 }
-
 
 extension FirstViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
