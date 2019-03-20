@@ -566,19 +566,4 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
 
     }
     
-    
-    
-}
-
-extension UITextField {
-    func underlined(){
-        let border = CALayer()
-        let width = CGFloat(1.5)
-        let pink = UIColor(red: 231/255, green: 117/255, blue: 157/255, alpha: 1.0)
-        border.borderColor = pink.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height + 0.6 - width , width:  self.frame.size.width, height: self.frame.size.height)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
-    }
 }

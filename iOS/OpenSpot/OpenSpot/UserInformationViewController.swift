@@ -23,15 +23,6 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         self.title = "Sign up"
     }
     
-    @IBAction func nextClicked(_ sender: Any) {
-        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "VehicleInformationViewController") as! VehicleInformationViewController
-        destinationVC.fullName = fullNameTextField.text!
-        destinationVC.email = emailTextField.text!
-        destinationVC.dateOfBirth =  monthTextField.text! + "/" + dayTextField.text! + "/" + yearTextField.text!
-        
-        self.navigationController!.pushViewController(destinationVC, animated: true)
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         // Try to find next responder
         if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
@@ -64,8 +55,37 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
 }
 
-
-
+extension UserInformationViewController: UIAlertViewDelegate{
+    @IBAction func nextClicked(_ sender: Any) {
+        if !(fullNameTextField.text?.contains(" "))!{
+            showErrorMessage(message: "Please Enter Your First And Last Name")
+        }
+        else if !(emailTextField.text?.contains("@"))! || !(emailTextField.text?.contains("."))!{
+            showErrorMessage(message: "Please Enter A Valid Email")
+        }
+        else if !((monthTextField.text?.count ?? 0) > 1) || Int(monthTextField.text!) ?? 13 > 13{
+            showErrorMessage(message: "Please Enter Your Birth Month")
+        }
+        else if !((dayTextField.text?.count ?? 0) > 1) || Int(dayTextField.text!) ?? 31 > 31{
+            showErrorMessage(message: "Please Enter Your Birth Day")
+        }
+        else if !((yearTextField.text?.count ?? 0) > 3) || (Int(yearTextField.text!) ?? 1900 < 1900 || Int(yearTextField.text!) ?? 1991 >	 2019){
+            showErrorMessage(message: "Please Enter Your Birth Year")
+        }
+        else{
+            let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "VehicleInformationViewController") as! VehicleInformationViewController
+            destinationVC.fullName = fullNameTextField.text!
+            destinationVC.email = emailTextField.text!
+            destinationVC.dateOfBirth =  monthTextField.text! + "/" + dayTextField.text! + "/" + yearTextField.text!
+            self.navigationController!.pushViewController(destinationVC, animated: true)
+        }
+    }
+    
+    func showErrorMessage(message : String) {
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
