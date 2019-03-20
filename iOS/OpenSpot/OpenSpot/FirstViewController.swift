@@ -51,7 +51,6 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
             authUI?.delegate = self
             let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!)]
             authUI?.providers = providers
-            
             let authViewController = OpenSpotFirebaseUI(authUI: authUI!)
             let navc = UINavigationController(rootViewController: authViewController)
             self.present(navc, animated: false, completion: nil)
