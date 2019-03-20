@@ -72,8 +72,9 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
             authUI?.delegate = self
             let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()!),]
             authUI?.providers = providers
-            let authViewController = authUI!.authViewController()
-            self.present(authViewController, animated: false, completion: nil)
+            let authViewController = OpenSpotFirebaseUI(authUI: authUI!)
+            let navc = UINavigationController(rootViewController: authViewController)
+            self.present(navc, animated: false, completion: nil)
         }
     }
     
