@@ -65,10 +65,10 @@ extension UserInformationViewController: UIAlertViewDelegate{
         else if !(emailTextField.text?.contains("@"))! || !(emailTextField.text?.contains("."))!{
             showErrorMessage(message: "Please Enter A Valid Email")
         }
-        else if !((monthTextField.text?.count ?? 0) > 1) || Int(monthTextField.text!) ?? 13 > 13{
+        else if Int(monthTextField.text!) ?? 13 > 13{
             showErrorMessage(message: "Please Enter Your Birth Month")
         }
-        else if !((dayTextField.text?.count ?? 0) > 1) || Int(dayTextField.text!) ?? 31 > 31{
+        else if Int(dayTextField.text!) ?? 31 > 31{
             showErrorMessage(message: "Please Enter Your Birth Day")
         }
         else if !((yearTextField.text?.count ?? 0) > 3) || (Int(yearTextField.text!) ?? 1900 < 1900 || Int(yearTextField.text!) ?? 1991 >	 2019){

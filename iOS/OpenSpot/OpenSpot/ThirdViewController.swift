@@ -11,22 +11,24 @@ import FirebaseUI
 
 class ThirdViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var menuTableView: UITableView!
-    var isLoggedOut: Bool = false
+    static var isLoggedOut: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view, typically from a nib.
         menuTableView.register(MenuOptionCell.self, forCellReuseIdentifier: "cell")
-        if isLoggedOut == true{
-            self.tabBarController?.selectedIndex = 0
-        }
-        isLoggedOut = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = self.menuTableView.indexPathForSelectedRow{
             self.menuTableView.deselectRow(at: index, animated: false)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if ThirdViewController.isLoggedOut == true{
+            self.tabBarController?.selectedIndex = 0
         }
     }
     
@@ -66,7 +68,7 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
     func logOut(){
         try! Auth.auth().signOut()
         if self.storyboard != nil {
-            isLoggedOut = true
+            ThirdViewController.isLoggedOut = true
             let authUI = FUIAuth.defaultAuthUI()
             FUIAuth.defaultAuthUI()?.shouldHideCancelButton = true
             authUI?.delegate = self

@@ -25,54 +25,54 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
     
     var makeArr = ["Acura", "Alfa Romeo", "Aston Martin", "Audi",  "Bentley", "BMW", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Dodge","Ferrari", "FIAT","Ford","Freightliner","Genesis","GMC","Honda", "Hyundai","INFINITI","Jaguar","Jeep","Kia","Lamborghini","Land Rover","Lexus","Lincoln","Lotus", "Maserati","MAZDA","McLaren","Mercedes-Benz","MINI","Mitsubishi","Nissan","Porsche","Ram","Rolls-Royce","smart","Subaru","Tesla","Toyota","Volkswagen","Volvo"]
     
-    var acuraModels = ["acuraModel1","acuraModel2"]
-    var alfaRomeoModels = ["alfaRomeoModels1","alfaRomeoModels2"]
-    var astonMartinModels = ["AstonMartin1","AstonMartin2"]
-    var audiModels = ["Audi1","Audi2"]
-    var bentleyModels = ["bentleymode1","bentleymode2"]
-    var bmwModels = ["bmw1","bmw2"]
-    var buickModels = ["buickModels1","buickModels2"]
-    var cadillacModels = ["cadillacModels1","cadillacModels2"]
-    var chevroletModels = ["chevroletModels1","chevroletModels2"]
-    var chryslerModels = ["chryslerModels1","chryslerModels2"]
-    var dodgeModels = ["dodgeModels1","dodgeModels2"]
-    var ferrariModels = ["ferrariModels1","ferrariModels2"]
-    var fiatModels = ["fiatModels1","fiatModels2"]
-    var fordModels = ["fordModels1","fordModels2"]
-    var freightlinerModels = ["freightlinerModels1","freightlinerModels2"]
-    var genesisModels = ["genesisModels1","genesisModels2"]
-    var gmcModels = ["gmcModels1","gmcModels2"]
-    var hondaModels = ["hondaModels1","hondaModels2"]
-    var hyundaiModels = ["hyundaiModels1","hyundaiModels2"]
-    var infinitiModels = ["infinitiModels1","infinitiModels2"]
-    var jaguarModels = ["jaguarModels1","jaguarModels2"]
-    var jeepModels = ["jeepModels1","jeepModels2"]
-    var kiaModels = ["kiaModels1","kiaModels2"]
-    var lamborghiniModels = ["lamborghiniModels1","lamborghiniModels2"]
-    var landRoverModels = ["landRoverModels1","landRoverModels2"]
-    var lexusModels = ["lexusModels1","lexusModels2"]
-    var lincolnModels = ["lincolnModels1","lincolnModels2"]
-    var lotusModels = ["lotusModels1","lotusModels2"]
-    var maseratiModels = ["maseratiModels1","maseratiModels2"]
-    var mazdaModels = ["mazdaModels1","mazdaModels2"]
-    var mclarenModels = ["mclarenModels1","mclarenModels2"]
-    var mercedesbenzModels = ["mercedesbenzModels1","mercedesbenzModels2"]
-    var miniModels = ["miniModels1","miniModels2"]
-    var mitsubishiModels = ["mitsubishiModels1","mitsubishiModels2"]
-    var nissanModels = ["nissanModels1","nissanModels2"]
-    var porscheModels = ["porscheModels1","porscheModels2"]
-    var ramModels = ["ramModels1","ramModels2"]
-    var rollsroyceModels = ["rollsroyceModels1","rollsroyceModels2"]
-    var smartModels = ["smartModels1","smartModels2"]
-    var subaruModels = ["subaruModels1","subaruModels"]
-    var testlaModels = ["testlaModels1","testlaModels2"]
-    var toyotaModels = ["toyotaModels1","toyotaModels2"]
-    var volkswagenModels = ["volkswagenModels1","volkswagenModels2"]
-    var volvoModels = ["volvoModels1","volvoModels2"]
+    var acuraModels = ["ILX", "MDX", "MDX Sport Hybrid", "NSX", "RDX", "RLX", "RLX Sport Hybrid", "TLX"]
+    var alfaRomeoModels = ["4C", "4C Spider", "Giulia", "Stelvio"]
+    var astonMartinModels = ["DB11", "Vanquish S"]
+    var audiModels = ["A3", "A3 Sportback e-tron", "A4", "A4 allroad", "A5", "A6", "A7", "A8", "e-tron", "Q3", "Q5", "Q7", "Q8", "R8", "RS 3", "RS 5", "RS 7", "S3", "S4", "S5", "S6", "S7", "S8", "SQ5", "TT"]
+    var bentleyModels = ["Bentayga", "Continental", "Flying Spur", "Mulsanne"]
+    var bmwModels = ["2 Series", "3 Series", "4 Series", "5 Series", "6 Series", "7 Series", "i3", "i8", "M2", "M3", "M4", "M5", "M6", "X1", "X2", "X3", "X4", "X5", "X5 M", "X6", "X6 M"]
+    var buickModels = ["Cascada", "Enclave", "Encore", "Envision", "LaCrosse", "Regal Sportback", "Regal TourX"]
+    var cadillacModels = ["ATS", "ATS-V", "CT6", "CTS", "CTS-V", "Escalade", "Escalade ESV", "XT4", "XT5", "XTS"]
+    var chevroletModels = ["Blazer", "Bolt EV", "Camaro", "City Express", "Colorado Crew Cab", "Colorado Extended Cab", "Corvette", "Cruze", "Equinox", "Express 2500 Cargo", "Express 2500 Passenger", "Express 3500 Cargo", "Express 3500 Passenger", "Impala", "Malibu", "Silverado 1500 Crew Cab", "Silverado 1500 Double Cab", "Silverado 1500 LD Double Cab", "Silverado 1500 Regular Cab", "Silverado 2500 HD Crew Cab", "Silverado 2500 HD Double Cab", "Silverado 2500 HD Regular Cab", "Silverado 3500 HD Crew Cab", "Silverado 3500 HD Double Cab", "Silverado 3500 HD Regular Cab", "Sonic", "Spark", "Suburban", "Tahoe", "Traverse", "Trax", "Volt"]
+    var chryslerModels = ["300", "Pacifica", "Pacifica Hybrid"]
+    var dodgeModels = ["Challenger", "Charger", "Durango", "Grand Caravan Passenger", "Journey"]
+    var ferrariModels = ["488 GTB", "488 Spider", "812 Superfast", "California", "F12berlinetta", "GTC4Lusso", "Portofino"]
+    var fiatModels = ["124 Spider", "500", "500 Abarth", "500c", "500c Abarth", "500e", "500L", "500X"]
+    var fordModels = ["C-MAX Hybrid", "EcoSport", "Edge", "Escape", "Expedition", "Expedition MAX", "Explorer", "F150 Regular Cab", "F150 Super Cab", "F150 SuperCrew Cab", "F250 Super Duty Crew Cab", "F250 Super Duty Regular Cab", "F250 Super Duty Super Cab", "F350 Super Duty Crew Cab", "F350 Super Duty Regular Cab", "F350 Super Duty Super Cab", "F450 Super Duty Crew Cab", "Fiesta", "Flex", "Focus", "Fusion", "Fusion Energi", "Mustang", "Ranger SuperCab", "Ranger SuperCrew", "Taurus", "Transit 150 Van", "Transit 150 Wagon", "Transit 250 Van", "Transit 350 HD Van", "Transit 350 Van", "Transit 350 Wagon", "Transit Connect Cargo", "Transit Connect Passenger"]
+    var freightlinerModels = ["Sprinter 2500 Cargo", "Sprinter 2500 Crew", "Sprinter 2500 Passenger", "Sprinter 3500 Cargo", "Sprinter 3500XD Cargo", "Sprinter WORKER Cargo"]
+    var genesisModels = ["G70", "G80", "G90"]
+    var gmcModels = ["Acadia", "Canyon Crew Cab", "Canyon Extended Cab", "Savana 2500 Cargo", "Savana 2500 Passenger", "Savana 3500 Cargo", "Savana 3500 Passenger", "Sierra 1500 Crew Cab", "Sierra 1500 Double Cab", "Sierra 1500 Regular Cab", "Sierra 2500 HD Crew Cab", "Sierra 2500 HD Double Cab", "Sierra 2500 HD Regular Cab", "Sierra 3500 HD Crew Cab", "Sierra 3500 HD Double Cab", "Sierra 3500 HD Regular Cab", "Terrain", "Yukon", "Yukon XL"]
+    var hondaModels = ["Accord", "Accord Hybrid", "Civic", "Civic Type R", "Clarity Electric", "Clarity Fuel Cell", "Clarity Plug-in Hybrid", "CR-V", "Fit", "HR-V", "Insight", "Odyssey", "Passport", "Pilot", "Ridgeline"]
+    var hyundaiModels = ["Accent", "Elantra", "Elantra GT", "Ioniq Electric", "Ioniq Hybrid", "Ioniq Plug-in Hybrid", "Kona", "Kona Electric", "NEXO", "Santa Fe", "Santa Fe Sport", "Santa Fe XL", "Sonata", "Sonata Hybrid", "Sonata Plug-in Hybrid", "Tucson", "Veloster"]
+    var infinitiModels = ["Q50", "Q60", "Q70", "QX30", "QX50", "QX60", "QX80"]
+    var jaguarModels = ["E-PACE", "F-PACE", "F-TYPE", "I-PACE", "XE", "XF", "XJ"]
+    var jeepModels = ["Cherokee", "Compass", "Grand Cherokee", "Renegade", "Wrangler", "Wrangler Unlimited"]
+    var kiaModels = ["Cadenza", "Forte", "Forte5", "K900", "Niro", "Niro Plug-in Hybrid", "Optima", "Optima Hybrid", "Optima Plug-in Hybrid", "Rio", "Sedona", "Sorento", "Soul", "Soul EV", "Sportage", "Stinger", "Telluride"]
+    var lamborghiniModels = ["Aventador", "Huracan"]
+    var landRoverModels = ["Discovery", "Discovery Sport", "Range Rover", "Range Rover Evoque", "Range Rover Sport", "Range Rover Velar"]
+    var lexusModels = ["ES", "GS", "GX", "IS", "LC", "LS", "LX", "NX", "RC", "RX", "UX"]
+    var lincolnModels = ["Aviator", "Continental", "MKC", "MKT", "MKX", "MKZ", "Nautilus", "Navigator", "Navigator L"]
+    var lotusModels = ["Evora 400"]
+    var maseratiModels = ["Ghibli", "GranTurismo", "Levante", "Quattroporte"]
+    var mazdaModels = ["CX-3", "CX-5", "CX-9", "MAZDA3", "MAZDA6", "MX-5 Miata", "MX-5 Miata RF"]
+    var mclarenModels = ["570GT", "570S", "720S"]
+    var mercedesbenzModels = ["A-Class", "C-Class", "CLA", "CLS", "E-Class", "G-Class", "GLA", "GLC", "GLC Coupe", "GLE", "GLS", "Mercedes-AMG C-Class", "Mercedes-AMG CLA", "Mercedes-AMG CLS", "Mercedes-AMG E-Class", "Mercedes-AMG G-Class", "Mercedes-AMG GLA", "Mercedes-AMG GLC", "Mercedes-AMG GLC Coupe", "Mercedes-AMG GLE", "Mercedes-AMG GLE Coupe", "Mercedes-AMG GLS", "Mercedes-AMG GT", "Mercedes-AMG S-Class", "Mercedes-AMG SL", "Mercedes-AMG SLC", "Mercedes-Maybach S-Class", "Metris Cargo", "Metris Passenger", "Metris WORKER Cargo", "Metris WORKER Passenger", "S-Class", "SL", "SLC", "Sprinter 2500 Cargo", "Sprinter 2500 Crew", "Sprinter 2500 Passenger", "Sprinter 3500 Cargo", "Sprinter 3500 XD Cargo", "Sprinter WORKER Cargo"]
+    var miniModels = ["Clubman", "Convertible", "Countryman", "Hardtop 2 Door", "Hardtop 4 Door"]
+    var mitsubishiModels = ["Eclipse Cross", "Mirage", "Mirage G4", "Outlander", "Outlander PHEV", "Outlander Sport"]
+    var nissanModels = ["370Z", "Altima", "Armada", "Frontier Crew Cab", "Frontier King Cab", "GT-R", "Kicks", "LEAF", "Maxima", "Murano", "NV1500 Cargo", "NV200", "NV2500 HD Cargo", "NV3500 HD Cargo", "NV3500 HD Passenger", "Pathfinder", "Rogue", "Rogue Sport", "Sentra", "Titan Crew Cab", "Titan King Cab", "TITAN Single Cab", "TITAN XD Crew Cab", "TITAN XD King Cab", "TITAN XD Single Cab", "Versa", "Versa Note"]
+    var porscheModels = ["718 Boxster", "718 Cayman", "911", "Cayenne", "Macan", "Panamera"]
+    var ramModels = ["1500 Classic Crew Cab", "1500 Classic Quad Cab", "1500 Classic Regular Cab", "1500 Crew Cab", "1500 Quad Cab", "1500 Regular Cab", "2500 Crew Cab", "2500 Mega Cab", "2500 Regular Cab", "3500 Crew Cab", "3500 Mega Cab", "3500 Regular Cab", "ProMaster Cargo Van", "ProMaster City", "ProMaster Window Van"]
+    var rollsroyceModels = ["Dawn", "Ghost", "Phantom", "Wraith"]
+    var smartModels = ["fortwo electric drive", "fortwo electric drive cabrio"]
+    var subaruModels = ["Ascent", "BRZ", "Crosstrek", "Forester", "Impreza", "Legacy", "Outback", "WRX"]
+    var testlaModels = ["Model 3", "Model S", "Model X", "Model Y", "Roadster"]
+    var toyotaModels = ["4Runner", "86", "Avalon", "Avalon Hybrid", "Camry", "Camry Hybrid", "C-HR", "Corolla", "Corolla Hatchback", "Corolla iM", "Highlander", "Highlander Hybrid", "Land Cruiser", "Mirai", "Prius", "Prius c", "Prius Prime", "RAV4", "RAV4 Hybrid", "Sequoia", "Sienna", "Tacoma Access Cab", "Tacoma Double Cab", "Tundra CrewMax", "Tundra Double Cab", "Yaris", "Yaris iA"]
+    var volkswagenModels = ["Atlas", "Beetle", "e-Golf", "Golf", "Golf Alltrack", "Golf GTI", "Golf R", "Golf SportWagen", "Jetta", "Passat", "Tiguan", "Tiguan Limited"]
+    var volvoModels = ["S60", "S90", "V60", "V90", "XC40", "XC60", "XC90"]
     
     var colorsArr = ["Black","Blue","Brown","Gold","Green","Red","Silver", "White", "Yellow"]
     
- 
+    
     
     var statePicker = UIPickerView()
     var makePicker = UIPickerView()
@@ -245,7 +245,7 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
             }else if(make.text == "Bentley"){
                 model.text = bentleyModels[row]
             }else if(make.text == "BMW"){
-                 model.text = bmwModels[row]
+                model.text = bmwModels[row]
             }else if(make.text == "Buick"){
                 model.text = buickModels[row]
                 
@@ -359,7 +359,7 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
                 
             }else if(make.text == "Volvo"){
                 model.text = volvoModels[row]
-
+                
             }
         }else if(pickerView == colorsPicker){
             color.text = colorsArr[row]
@@ -506,11 +506,6 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
         return ""
     }
     
-    
-    
-    
-    
-    
     let db = Firestore.firestore()
     let currentUser = Auth.auth().currentUser
     
@@ -546,7 +541,7 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
             check=true
         }
         
-        if(check==true){
+        if check == true {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
             self.present(controller, animated: true, completion: nil)
@@ -563,7 +558,7 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
                 "carColor": color.text!
                 ])
         }
-
+        
     }
     
 }

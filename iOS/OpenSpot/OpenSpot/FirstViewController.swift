@@ -29,6 +29,7 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        ThirdViewController.isLoggedOut = false
         let db = Firestore.firestore()
         let currentUser = Auth.auth().currentUser
         

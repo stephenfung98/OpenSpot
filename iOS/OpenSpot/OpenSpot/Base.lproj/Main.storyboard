@@ -120,14 +120,8 @@
                                     <action selector="nextClicked:" destination="IbB-Kr-WLg" eventType="touchUpInside" id="AC8-A0-bjA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your information in order to be able to start booking driveways!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9s-ej-phu">
-                                <rect key="frame" x="8" y="112.99999999999999" width="398" height="50.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-P4-W3W">
-                                <rect key="frame" x="15" y="188.33333333333337" width="384" height="260"/>
+                                <rect key="frame" x="15" y="193.33333333333337" width="384" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzG-e6-sZ5">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="79.333333333333329"/>
@@ -230,8 +224,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="MM " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJD-CS-tnh" customClass="UITextFieldExtension" customModule="OpenSpot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="43.666666666666686" width="40.666666666666664" height="27.666666666666671"/>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJD-CS-tnh" customClass="UITextFieldExtension" customModule="OpenSpot" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="43.666666666666686" width="36" height="27.666666666666671"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -252,8 +246,8 @@
                                                     <outlet property="delegate" destination="IbB-Kr-WLg" id="rQo-Ym-ttq"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="DD " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K39-h4-qme" customClass="UITextFieldExtension" customModule="OpenSpot" customModuleProvider="target">
-                                                <rect key="frame" x="48.666666666666657" y="43.666666666666686" width="35.333333333333343" height="27.666666666666671"/>
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K39-h4-qme" customClass="UITextFieldExtension" customModule="OpenSpot" customModuleProvider="target">
+                                                <rect key="frame" x="44" y="43.666666666666686" width="30.666666666666671" height="27.666666666666671"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -275,7 +269,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder=" YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oza-Am-tJd" customClass="UITextFieldExtension" customModule="OpenSpot" customModuleProvider="target">
-                                                <rect key="frame" x="92" y="43.666666666666686" width="56" height="27.666666666666671"/>
+                                                <rect key="frame" x="82.666666666666671" y="43.666666666666686" width="56.000000000000014" height="27.666666666666671"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -321,17 +315,23 @@
                                     <constraint firstAttribute="height" constant="260" id="tPF-5C-Qkc"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your information in order to be able to start booking driveways" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-He-oFH">
+                                <rect key="frame" x="20" y="112.99999999999999" width="374" height="50.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="d9s-ej-phu" firstAttribute="leading" secondItem="om0-hl-1Gu" secondAttribute="leading" constant="8" id="9iP-ED-hLW"/>
+                            <constraint firstItem="EOI-He-oFH" firstAttribute="top" secondItem="om0-hl-1Gu" secondAttribute="top" constant="25" id="A3X-4C-wyZ"/>
+                            <constraint firstItem="HQO-P4-W3W" firstAttribute="top" secondItem="EOI-He-oFH" secondAttribute="bottom" constant="30" id="BLS-2K-aWd"/>
                             <constraint firstItem="om0-hl-1Gu" firstAttribute="bottom" secondItem="B0N-YN-eTd" secondAttribute="bottom" constant="30" id="PuW-gy-9Nc"/>
                             <constraint firstItem="om0-hl-1Gu" firstAttribute="trailing" secondItem="B0N-YN-eTd" secondAttribute="trailing" constant="30" id="RVC-LX-l91"/>
                             <constraint firstItem="om0-hl-1Gu" firstAttribute="trailing" secondItem="HQO-P4-W3W" secondAttribute="trailing" constant="15" id="WLo-rw-EMu"/>
-                            <constraint firstItem="d9s-ej-phu" firstAttribute="trailing" secondItem="om0-hl-1Gu" secondAttribute="trailing" constant="-8" id="ag8-NE-448"/>
                             <constraint firstItem="HQO-P4-W3W" firstAttribute="leading" secondItem="om0-hl-1Gu" secondAttribute="leading" constant="15" id="bug-8W-4wN"/>
-                            <constraint firstItem="d9s-ej-phu" firstAttribute="top" secondItem="om0-hl-1Gu" secondAttribute="top" constant="25" id="uzi-aJ-pnJ"/>
-                            <constraint firstItem="HQO-P4-W3W" firstAttribute="top" secondItem="d9s-ej-phu" secondAttribute="bottom" constant="25" id="v25-9r-c0x"/>
+                            <constraint firstItem="om0-hl-1Gu" firstAttribute="trailing" secondItem="EOI-He-oFH" secondAttribute="trailing" constant="20" id="c8o-iS-VrE"/>
+                            <constraint firstItem="EOI-He-oFH" firstAttribute="leading" secondItem="om0-hl-1Gu" secondAttribute="leading" constant="20" id="vcP-ZX-SWx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="om0-hl-1Gu"/>
                     </view>
@@ -377,7 +377,7 @@
                                     <action selector="skipClicked:" destination="R2d-aa-8Z1" eventType="touchUpInside" id="Iu4-ow-jhA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your car information, in order to be able to start booking driveways!" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf4-d4-nFA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your car information in order to be able to start booking driveways" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf4-d4-nFA">
                                 <rect key="frame" x="20" y="69" width="374" height="75.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -438,6 +438,7 @@
                         <constraints>
                             <constraint firstItem="1aU-3C-Rbg" firstAttribute="leading" secondItem="dyZ-5q-1Rx" secondAttribute="leading" constant="55" id="9G4-AK-J56"/>
                             <constraint firstItem="dyZ-5q-1Rx" firstAttribute="trailing" secondItem="J8h-oV-21o" secondAttribute="trailing" constant="20" id="9oU-Wi-EcK"/>
+                            <constraint firstItem="dyZ-5q-1Rx" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1aU-3C-Rbg" secondAttribute="trailing" constant="320" id="H06-fn-HGL"/>
                             <constraint firstItem="J8h-oV-21o" firstAttribute="leading" secondItem="dyZ-5q-1Rx" secondAttribute="leading" constant="20" id="I4w-3V-P6Q"/>
                             <constraint firstItem="dyZ-5q-1Rx" firstAttribute="bottom" secondItem="1aU-3C-Rbg" secondAttribute="bottom" constant="42" id="Kcd-Wk-2n0"/>
                             <constraint firstItem="dyZ-5q-1Rx" firstAttribute="trailing" secondItem="G97-Ff-XO1" secondAttribute="trailing" constant="55" id="PVK-Xp-gCC"/>
