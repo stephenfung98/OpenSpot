@@ -131,5 +131,11 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             true
         }
+        val button2 = findPreference("contact")
+        button2.setOnPreferenceClickListener {
+            AuthUI.getInstance()
+            startActivity(Intent(activity, ContactActivity::class.java))
+            true
+        }
     }
 }
