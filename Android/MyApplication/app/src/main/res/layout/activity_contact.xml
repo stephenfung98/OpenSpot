@@ -82,6 +82,7 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
