@@ -9,30 +9,30 @@ import UIKit
 
 class UITextFieldExtension: UITextField {
     
-    let padding = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
-    
-    override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    
-    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    
-    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    
-    @IBInspectable var borderColor: UIColor? {
-        didSet {
-            layer.borderColor = borderColor?.cgColor
-        }
-    }
-    @IBInspectable var borderWidth: CGFloat = 0 {
-        didSet {
-            layer.borderWidth = borderWidth
-        }
-    }
+//    let padding = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
+//    
+//    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+//        return bounds.inset(by: padding)
+//    }
+//    
+//    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+//        return bounds.inset(by: padding)
+//    }
+//    
+//    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+//        return bounds.inset(by: padding)
+//    }
+//    
+//    @IBInspectable var borderColor: UIColor? {
+//        didSet {
+//            layer.borderColor = borderColor?.cgColor
+//        }
+//    }
+//    @IBInspectable var borderWidth: CGFloat = 0 {
+//        didSet {
+//            layer.borderWidth = borderWidth
+//        }
+//    }
 }
 
 extension UITextField{
