@@ -123,7 +123,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-P4-W3W">
                                 <rect key="frame" x="15" y="193.5" width="384" height="139"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Joe Smith" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ix7-La-GdO">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ix7-La-GdO">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="23"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -135,7 +135,7 @@
                                             <outlet property="delegate" destination="IbB-Kr-WLg" id="h6c-C7-IQw"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-8A-Fab">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-8A-Fab">
                                         <rect key="frame" x="0.0" y="58" width="384" height="23"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -147,13 +147,13 @@
                                             <outlet property="delegate" destination="IbB-Kr-WLg" id="q7r-mE-Abo"/>
                                         </connections>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sSa-tx-18t">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sSa-tx-18t">
                                         <rect key="frame" x="0.0" y="116" width="384" height="23"/>
                                         <subviews>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJD-CS-tnh">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="23"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="zAf-gE-u8F"/>
+                                                    <constraint firstAttribute="width" constant="32" id="zAf-gE-u8F"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -166,9 +166,9 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K39-h4-qme">
-                                                <rect key="frame" x="52" y="0.0" width="40" height="23"/>
+                                                <rect key="frame" x="42" y="0.0" width="32" height="23"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="QQw-et-ni4"/>
+                                                    <constraint firstAttribute="width" constant="32" id="QQw-et-ni4"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -180,10 +180,10 @@
                                                     <outlet property="delegate" destination="IbB-Kr-WLg" id="ez1-1G-9xa"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder=" YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oza-Am-tJd">
-                                                <rect key="frame" x="104" y="0.0" width="80" height="23"/>
+                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oza-Am-tJd">
+                                                <rect key="frame" x="84" y="0.0" width="48" height="23"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="iML-OC-mle"/>
+                                                    <constraint firstAttribute="width" constant="48" id="iML-OC-mle"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -196,7 +196,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1S-iO-UNo">
-                                                <rect key="frame" x="196" y="0.0" width="188" height="23"/>
+                                                <rect key="frame" x="142" y="0.0" width="242" height="23"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>

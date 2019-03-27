@@ -289,13 +289,16 @@
 				TargetAttributes = {
 					3E3C9C8622176FAE00A88600 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					3E3C9C9C22176FB000A88600 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3E3C9C8622176FAE00A88600;
 					};
 					3E3C9CA722176FB000A88600 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3E3C9C8622176FAE00A88600;
 					};
 				};
@@ -783,7 +786,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.sfung.OpenSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -803,7 +806,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.sfung.OpenSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -824,7 +827,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenSpot.app/OpenSpot";
 			};
@@ -846,7 +849,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenSpot.app/OpenSpot";
 			};
@@ -868,7 +871,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OpenSpot;
 			};
@@ -890,7 +893,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OpenSpot;
 			};
