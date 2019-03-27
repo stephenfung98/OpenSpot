@@ -442,7 +442,7 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
             }
         }
         //*****************State Location Spinner********************//
-        val carStates = arrayListOf("Select a state","Alabama",
+        val carStates = arrayListOf("Select a State","Alabama",
             "Alaska",
             "Arizona",
             "Arkansas",
@@ -533,31 +533,39 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
 
 
      private fun saveVehicleInfo(view :View){
-        val editText = findViewById<EditText>(R.id.edit_license)
-        val value = editText.text.toString()
+         val editText = findViewById<EditText>(R.id.edit_license)
+         val value = editText.text.toString()
 
-        val user = HashMap<String, Any>()
-        user["CarMake"] = spinner.selectedItem.toString()
-        user["CarModel"] = spinner2.selectedItem.toString()
-        user["CarColor"] = spinner3.selectedItem.toString()
-        user["State"] = spinner4.selectedItem.toString()
-        user["LicensePlate"] = value
+         if(spinner.selectedItem.toString() == "Select a Car Make" || spinner2.selectedItem == "Select a Car Model"
+             || spinner3.selectedItem == "Select a Car Color" || spinner4.selectedItem == "Select a State" || value == ""){
+             Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
+                 .show()
+         }
+         else {
+             val user = HashMap<String, Any>()
+             user["CarMake"] = spinner.selectedItem.toString()
+             user["CarModel"] = spinner2.selectedItem.toString()
+             user["CarColor"] = spinner3.selectedItem.toString()
+             user["State"] = spinner4.selectedItem.toString()
+             user["LicensePlate"] = value
 
-    // Add a new document with a generated ID
-        db.collection("Users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
+             // Add a new document with a generated ID
+             db.collection("Users")
+                 .add(user)
+                 .addOnSuccessListener { documentReference ->
+                     Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                 }
+                 .addOnFailureListener { e ->
+                     Log.w(TAG, "Error adding document", e)
+                 }
+
+             val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+             startActivity(i)
+         }
     }
 
     fun clickButton(v : View){
         saveVehicleInfo(v)
-        val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
-        startActivity(i)
     }
 
     fun skipButton(v : View){
