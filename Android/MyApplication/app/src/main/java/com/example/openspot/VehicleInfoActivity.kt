@@ -543,11 +543,11 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
          }
          else {
              val user = HashMap<String, Any>()
-             user["CarMake"] = spinner.selectedItem.toString()
-             user["CarModel"] = spinner2.selectedItem.toString()
-             user["CarColor"] = spinner3.selectedItem.toString()
-             user["State"] = spinner4.selectedItem.toString()
-             user["LicensePlate"] = value
+             user["carMake"] = spinner.selectedItem.toString()
+             user["carModel"] = spinner2.selectedItem.toString()
+             user["carColor"] = spinner3.selectedItem.toString()
+             user["state"] = spinner4.selectedItem.toString()
+             user["licensePlate"] = value
 
              // Add a new document with a generated ID
              db.collection("Users")

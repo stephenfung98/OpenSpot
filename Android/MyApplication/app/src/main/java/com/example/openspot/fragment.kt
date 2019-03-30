@@ -122,8 +122,8 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.preferences, root_key)
-        val button = findPreference("logout")
-        button.setOnPreferenceClickListener {
+        val logoutBtn = findPreference("logout")
+        logoutBtn.setOnPreferenceClickListener {
             AuthUI.getInstance()
                 .signOut(activity!!.baseContext)
                 .addOnCompleteListener {
@@ -131,5 +131,11 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             true
         }
+        val userProfileBtn = findPreference("profile")
+        userProfileBtn.setOnPreferenceClickListener {
+            startActivity(Intent(activity, userProfile::class.java))
+            true
+        }
+
     }
 }
