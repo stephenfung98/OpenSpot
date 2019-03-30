@@ -21,7 +21,7 @@ class MenuOptionCell: UITableViewCell {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-//        label.textColor = .white
+        //        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         label.text = "Sample text"
         return label
