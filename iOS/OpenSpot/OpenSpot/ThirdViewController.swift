@@ -31,6 +31,7 @@ class ThirdViewController: UIViewController, FUIAuthDelegate {
         if ThirdViewController.isLoggedOut == true{
             self.tabBarController?.selectedIndex = 0
         }
+        menuTableView.reloadData()
     }
     
 }
@@ -74,6 +75,9 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
         case 3:
             print("3")
         case 4:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "SupportNavigationController")
+            self.present(controller, animated: false, completion: nil)
             print("4")
         case 5:
             logOut()
@@ -98,3 +102,5 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
+
+

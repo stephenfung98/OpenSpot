@@ -43,16 +43,16 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
                 self.dayTextField.text = dob![3..<5]
                 self.yearTextField.text = dob![6..<10]
                 
-                let btnBack = UIBarButtonItem(title: "Back", style:.done, target: self, action: #selector(self.dismissVC))
-                btnBack.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
+                let btnBack = UIBarButtonItem(title: "Close", style:.done, target: self, action: #selector(self.dismissVC))
+                btnBack.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2319215834, green: 0.5326585174, blue: 0.9921949506, alpha: 1)], for: .normal)
                 self.navigationItem.setLeftBarButton(btnBack, animated: true)
             }
         }
     }
     
-        @objc func dismissVC() {
-            self.dismiss(animated: true, completion: nil)
-        }
+    @objc func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         // Try to find next responder
@@ -130,9 +130,7 @@ extension UserInformationViewController: UIAlertViewDelegate{
                 "dateOfBirth": monthTextField.text! + "/" + dayTextField.text! + "/" + yearTextField.text!
                 ])
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
-            self.present(controller, animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
