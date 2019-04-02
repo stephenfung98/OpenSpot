@@ -1,6 +1,7 @@
 package com.example.openspot
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -27,6 +28,7 @@ import com.google.android.gms.location.LocationServices
 class ReservationFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         return   inflater.inflate(R.layout.reservation, container, false)
     }
 }
@@ -45,11 +47,13 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         if(activity != null) {
             gMapView = view!!.findViewById(R.id.mapView) as MapView
             mapView.onCreate(savedInstanceState)
@@ -122,8 +126,10 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.preferences, root_key)
-        val button = findPreference("logout")
-        button.setOnPreferenceClickListener {
+        activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        val logoutButton = findPreference("logout")
+        logoutButton.setOnPreferenceClickListener {
             AuthUI.getInstance()
                 .signOut(activity!!.baseContext)
                 .addOnCompleteListener {
@@ -131,10 +137,16 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             true
         }
-        val button2 = findPreference("contact")
-        button2.setOnPreferenceClickListener {
+        val contactUsButton = findPreference("contact")
+        contactUsButton.setOnPreferenceClickListener {
             AuthUI.getInstance()
             startActivity(Intent(activity, ContactActivity::class.java))
+            true
+        }
+        val vehicleButton = findPreference("vehicle")
+        vehicleButton.setOnPreferenceClickListener {
+            AuthUI.getInstance()
+            startActivity(Intent(activity, VehicleViewActivity::class.java))
             true
         }
     }

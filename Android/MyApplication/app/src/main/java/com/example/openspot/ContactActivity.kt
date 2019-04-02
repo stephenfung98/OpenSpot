@@ -1,6 +1,7 @@
 package com.example.openspot
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ class ContactActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val user = FirebaseAuth.getInstance().currentUser
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         setTheme(R.style.FragmentTheme)
         setContentView(R.layout.activity_contact)

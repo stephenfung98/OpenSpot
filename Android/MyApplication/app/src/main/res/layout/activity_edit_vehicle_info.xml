@@ -4,7 +4,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.example.openspot.VehicleInfoActivity">
+                tools:context="com.example.openspot.EditVehicleInfoActivity">
 
     <TextView
             android:id="@+id/dummy"
@@ -97,10 +97,10 @@
             android:layout_marginHorizontal="8dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:text="Skip"
+            android:text="Delete"
             android:background="@color/fui_transparent"
             android:textSize="8pt"
-            android:textColor="@color/colorPrimaryDark"
-            android:onClick="skipButton"/>
+            android:textColor="#FF0000"
+            android:onClick="deleteButton"/>
 
 </RelativeLayout>
