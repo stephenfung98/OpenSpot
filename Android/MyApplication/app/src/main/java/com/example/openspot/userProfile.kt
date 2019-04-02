@@ -16,6 +16,7 @@ import java.util.*
 import java.util.regex.Pattern
 import android.app.DatePickerDialog
 import android.app.Dialog
+import kotlinx.android.synthetic.main.activity_user_profile.*
 
 
 class userProfile : AppCompatActivity() {
@@ -58,7 +59,7 @@ class userProfile : AppCompatActivity() {
     private fun initialize() {
         editFullName = findViewById<View>(R.id.full_name) as EditText
         editEmail = findViewById<View>(R.id.email) as EditText
-//      editDOB = findViewById<View>(R.id.dob) as EditText
+//        editDOB = findViewById<View>(R.id.dob) as EditText
         nextButton = findViewById<View>(R.id.user_profile_button) as ImageButton
 
         mDatabase = FirebaseDatabase.getInstance()
@@ -66,7 +67,7 @@ class userProfile : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
 
-        mPickDate = findViewById(R.id.myDatePickerButton) as Button
+        mPickDate = findViewById(R.id.myDatePickerButton)
 
 //      mPickDate.setOnClickListener(View.OnClickListener { showDialog(DATE_DIALOG_ID) })
 
@@ -76,9 +77,6 @@ class userProfile : AppCompatActivity() {
         mMonth = c.get(Calendar.MONTH)
         mDay = c.get(Calendar.DAY_OF_MONTH)
 
-        nextButton?.setOnClickListener {
-            nextButton()
-        }
     }
 
     private fun updateDisplay() {
@@ -99,6 +97,7 @@ class userProfile : AppCompatActivity() {
     }
 
     override fun onCreateDialog(id: Int): Dialog? {
+        super.onCreateDialog(id)
         when (id) {
             DATE_DIALOG_ID -> return DatePickerDialog(
                 this,
@@ -136,18 +135,18 @@ class userProfile : AppCompatActivity() {
 
 
     private fun validForm(): Boolean {
-        val full_name = editFullName.toString()
-        val email = editEmail.toString()
-        val dob = editDOB.toString()
+        val fullName = editFullName!!.text.toString()
+        val email = editEmail!!.text.toString()
+        val dob = editDOB?.text.toString()
 
         //if they are empty
-        if (TextUtils.isEmpty(full_name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(dob)) {
+        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(email) || TextUtils.isEmpty(dob)) {
             Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
                 .show()
             return false
         } else {
             //if fields are not empty
-            if (!isValidName(full_name)) {
+            if (!isValidName(fullName)) {
                 Toast.makeText(applicationContext, "Please enter valid name", Toast.LENGTH_LONG)
                     .show()
                 return false
@@ -159,16 +158,19 @@ class userProfile : AppCompatActivity() {
                 return true
             }
         }
-        return false
     }
 
 
-    fun nextButton() {
+     fun datePicker(v: View){
+        showDialog(DATE_DIALOG_ID)
+    }
+
+    fun nextButton(v:View) {
         if (validForm()) {
             val i = Intent(this@userProfile, VehicleInfoActivity::class.java)
-            i.putExtra("full_name", editFullName.toString())
-            i.putExtra("email", editEmail.toString())
-            i.putExtra("DOB", editDOB.toString())
+            i.putExtra("full_name", editFullName!!.text.toString())
+            i.putExtra("email", editEmail!!.text.toString())
+//            i.putExtra("DOB", editDOB!!.text.toString())
 
             //this code is for the next vehicle info activity to use these inputs
 //            val extras = intent.extras
@@ -184,10 +186,6 @@ class userProfile : AppCompatActivity() {
         }
     }
 
-     fun datePicker(v: View){
-        showDialog(DATE_DIALOG_ID)
-    }
-
-
 
 }
+

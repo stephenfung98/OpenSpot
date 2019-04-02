@@ -3,7 +3,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.example.openspot.VehicleInfoActivity">
+                tools:context="com.example.openspot.userProfile">
 
     <TextView
             android:id="@+id/user_profile"
@@ -18,10 +18,12 @@
 
         <EditText
                 android:id="@+id/full_name"
-                style="@style/viewCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
                 android:ems="10"
                 android:layout_below="@id/user_profile"
-                android:hint="@string/full_name"
+                android:hint="@string/fullName"
                 android:inputType="textPersonName" />
 
         <!--//If they wanted to update phone number update option-->
@@ -35,10 +37,12 @@
 
         <EditText
                 android:id="@+id/email"
-                style="@style/viewCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
                 android:ems="10"
                 android:layout_below="@id/full_name"
-                android:hint="@string/email"
+                android:hint="email"
                 android:inputType="textEmailAddress" />
 
         <!--<EditText-->
@@ -61,13 +65,15 @@
             android:background="@color/fui_transparent"
     />
 
-    <EditText
-            android:id="@+id/blank"
-            style="@style/viewCustom"
-            android:ems="10"
-            android:hint="Date of Birth"
-            android:layout_below="@id/blank"
-            android:inputType="textEmailAddress" />
+    <!--<EditText-->
+            <!--android:id="@+id/blank"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginHorizontal="8dp"-->
+            <!--android:ems="10"-->
+            <!--android:hint="Date of Birth"-->
+            <!--android:layout_below="@id/blank"-->
+            <!--android:inputType="textEmailAddress" />-->
 
     <!--<TextView android:id="@+id/showMyDate"-->
               <!--android:layout_width="wrap_content"-->
@@ -90,6 +96,7 @@
             android:id="@+id/user_profile_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="nextButton"
             android:src="@drawable/next_step"
             android:layout_below="@id/myDatePickerButton"
             android:layout_alignParentRight="true"
