@@ -24,7 +24,8 @@ import android.content.Context.MODE_PRIVATE
 
 
 
-class EditVehicleInfoActivity : AppCompatActivity(){
+class
+EditVehicleInfoActivity : AppCompatActivity(){
 
     companion object {
         const val TAG = "VehicleInfoActivity"
@@ -534,6 +535,8 @@ class EditVehicleInfoActivity : AppCompatActivity(){
         var car2 = extras!!.getStringArrayList("a")
         var carNumber = counterData.toString()[counterData.toString().length-1].toInt()
 
+        Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaaLOL: " + car2)
+
         val carMakeSpinner: Spinner = findViewById(R.id.spinner)
         val carModelSpinner: Spinner = findViewById(R.id.spinner2)
         val carColorSpinner: Spinner = findViewById(R.id.spinner3)
@@ -577,6 +580,8 @@ class EditVehicleInfoActivity : AppCompatActivity(){
                         .update("Cars",carInfo)
                         .addOnSuccessListener { documentReference ->
                             //                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                            val intent = Intent(this@EditVehicleInfoActivity, VehicleViewActivity::class.java)
+                            startActivity(intent)
                         }
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error adding document", e)
@@ -593,7 +598,6 @@ class EditVehicleInfoActivity : AppCompatActivity(){
         var carArray: Any?
         var counterData:String? = extras!!.getString("counter")
         var carNumber = counterData.toString()[counterData.toString().length-1].toInt()
-        var car2 = extras!!.getStringArrayList("a")
         var carInfo :MutableList<String>
 
         val docRef = db.collection("Users").document(currentFirebaseUser?.uid.toString())
@@ -606,18 +610,18 @@ class EditVehicleInfoActivity : AppCompatActivity(){
                     for(i in 0..4){
                              carInfo.removeAt(((carNumber-48) * 5))
                     }
-//                    val settings = applicationContext.getSharedPreferences("PreferencesName", Context.MODE_PRIVATE)
-//                    settings.edit().remove("KeyName").commit()
+
                     db.collection("Users").document(currentFirebaseUser?.uid.toString())
                         .update("Cars",carInfo)
                         .addOnSuccessListener { documentReference ->
-                            //                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                            val intent = Intent(this@EditVehicleInfoActivity, VehicleViewActivity::class.java)
+                            startActivity(intent)
                         }
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error adding document", e)
                         }
                 }
- else {
+            else {
                     Log.d(VehicleViewActivity.TAG, "No such document")
 
                 }
@@ -625,18 +629,11 @@ class EditVehicleInfoActivity : AppCompatActivity(){
     }
 
     fun clickButton(v : View){
-        saveVehicleInfo(v)
         EditVehicleInfoActivity.fromEditVehiclePage = true
-        val i = Intent(this@EditVehicleInfoActivity, VehicleViewActivity::class.java)
-        startActivity(i)
+        saveVehicleInfo(v)
     }
 
     fun deleteButton(v:View){
-        val vehicle : Fragment = VehicleFragment()
-        val fm = supportFragmentManager
         deleteCarInfo(v)
-        fm.beginTransaction().detach(vehicle).attach(vehicle).commit()
-        val i = Intent(this@EditVehicleInfoActivity, VehicleViewActivity::class.java)
-        startActivity(i)
     }
 }

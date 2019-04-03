@@ -8,13 +8,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
-import android.os.Build
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat.startActivity
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.EditText
-import com.example.openspot.VehicleInfoActivity.Companion.fromVehicleView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_vehicle_info.*
 
@@ -85,6 +81,21 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_vehicle_info)
+
+        var backButton = findViewById<Button>(R.id.skipButton)
+        if(fromVehicleView){
+            backButton.text = "BACK"
+            backButton.setOnClickListener {
+                fromVehicleView = true
+                val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
+                startActivity(i)
+            }
+        }
+        else{
+            backButton.setOnClickListener {
+                skipButton()
+            }
+        }
 
         //*****************Car Make Spinner******************   **//
         val carMake = arrayListOf("Select a Car Make","Acura",
@@ -568,6 +579,8 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                      .set(users)
                      .addOnSuccessListener { documentReference ->
                          Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
+                         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                         startActivity(i)
                      }
                      .addOnFailureListener { e ->
                          Log.w(TAG, "Error adding document", e)
@@ -590,7 +603,16 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                              db.collection("Users").document(currentFirebaseUser!!.uid)
                                  .update("Cars", carInfo)
                                  .addOnSuccessListener { documentReference ->
-                                     //                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                                     if(VehicleInfoActivity.fromVehicleView) {
+                                         VehicleInfoActivity.fromVehicleView = false
+                                         VehicleViewActivity.fromVehicleInfoPage = true
+                                         val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
+                                         startActivity(i)
+                                     }
+                                     else{
+                                         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                                         startActivity(i)
+                                     }
                                  }
                                  .addOnFailureListener { e ->
                                      Log.w(TAG, "Error adding document", e)
@@ -605,21 +627,23 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
     }
 
     fun clickButton(v : View){
-        saveVehicleInfo(v)
-        if(VehicleInfoActivity.fromVehicleView) {
-            VehicleInfoActivity.fromVehicleView = false
-            VehicleViewActivity.fromVehicleInfoPage = true
-            val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
-            startActivity(i)
-        }
-        else{
-            val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
-            startActivity(i)
-        }
+       saveVehicleInfo(v)
     }
 
-    fun skipButton(v : View){
-        saveVehicleInfo(v)
+    fun skipButton(){
+        val users = HashMap<String, ArrayList<String>>()
+        users["Cars"]= arrayListOf()
+        db.collection("Users").document(currentFirebaseUser!!.uid)
+            .set(users)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
+                val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                startActivity(i)
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+
         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
         startActivity(i)
     }

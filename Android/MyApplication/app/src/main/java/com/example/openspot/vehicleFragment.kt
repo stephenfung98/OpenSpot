@@ -19,17 +19,6 @@ import android.os.Build
 
 class VehicleFragment : PreferenceFragmentCompat() {
     private val db = FirebaseFirestore.getInstance()
-//    var carArray: Any? = {}
-
-    companion object {
-//        fun newInstance(a: ArrayList<String>): VehicleFragment {
-//            val fragment = VehicleFragment()
-//            val args = Bundle()
-//            args.putStringArrayList("position",a)
-//            fragment.arguments = args
-//            return fragment
-//        }
-    }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.vehicle_preferences, root_key)
@@ -38,7 +27,7 @@ class VehicleFragment : PreferenceFragmentCompat() {
 
         val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
         var counter = 0
-        var carArray: Any? = {}
+        var carArray :Any?
 
 
         Toast.makeText(activity!!.baseContext, "" + currentFirebaseUser?.uid, Toast.LENGTH_SHORT).show()
@@ -47,9 +36,9 @@ class VehicleFragment : PreferenceFragmentCompat() {
             .addOnSuccessListener { document ->
                 if (document != null) {
                     carArray = document.data!!["Cars"]
-                    Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaa: " + carArray.toString())
+                    Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaa: " + carArray)
 
-                    val a = carArray as ArrayList<String>
+                    val a  = carArray as ArrayList<String>
                     var title = ""
                     for(i in a.indices){
                         val preference = Preference(preferenceScreen.context)
