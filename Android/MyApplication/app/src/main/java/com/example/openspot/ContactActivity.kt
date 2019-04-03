@@ -6,8 +6,6 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
@@ -24,20 +22,11 @@ class ContactActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Contact"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        NavigationActivity.fromContactPage = true
 
-//        val mStartActBtn = findViewById<Button>(R.id.startActBtn)
-//        //handle button click
-//        mStartActBtn.setOnClickListener {
-//            //start activity intent
-//            startActivity(Intent(this@ContactActivity, NavigationActivity::class.java))
-//        }
-
-        val yourName = user!!.displayName
-        val yourEmail = user!!.email
-        your_name.text = yourName
-        your_email.text = yourEmail
         val yourSubject = findViewById<EditText>(R.id.your_subject)
         val yourMessage = findViewById<EditText>(R.id.your_message)
+
 
         val button = findViewById<Button>(R.id.post_message)
         button.setOnClickListener{
@@ -45,7 +34,7 @@ class ContactActivity : AppCompatActivity() {
             val message = yourMessage.text.toString()
 
             if(TextUtils.isEmpty(subject)){
-                your_subject.error = "Enter Your Subject"
+                your_subject.error = "Enter Your Subject Line"
                 your_subject.requestFocus()
             }
 
@@ -55,15 +44,20 @@ class ContactActivity : AppCompatActivity() {
             }
 
             val sendEmail = Intent(android.content.Intent.ACTION_SENDTO)
+            val data = "\n\n\n\n------------------------------------------------ \n Please enter" +
+                    " your questions/comments above this line" + "\n\n UID: " + user!!.uid + "\n\n MetaData: " +
+                    user.metadata
 
-            sendEmail.type = "plain/text"
-            sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, yourEmail)
+            sendEmail.type = "message/rfc822"
             sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject)
-            sendEmail.putExtra(android.content.Intent.EXTRA_TEXT, message)
-            sendEmail.data = Uri.parse("mailto:csecse442@gmail.com");
+            sendEmail.putExtra(android.content.Intent.EXTRA_TEXT, message + data)
+            sendEmail.data = Uri.parse("mailto:csecse442+support@gmail.com")
 
-            startActivity(Intent.createChooser(sendEmail, "Send mail..."))
+            if(!subject.isEmpty() && !message.isEmpty()) {
+                startActivity(Intent.createChooser(sendEmail, "Send mail..."))
+            }
         }
-
     }
+
+
 }
