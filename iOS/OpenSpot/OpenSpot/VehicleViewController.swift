@@ -48,10 +48,7 @@ class VehicleViewController: UIViewController{
                 self.carArray = getCarArray!
             self.vehicleTableView.reloadData()
         }
-        
     }
-    
-
     
     @objc func dismissViewController(){
         dismiss(animated: true, completion: nil)
@@ -88,29 +85,23 @@ extension VehicleViewController: UITableViewDelegate, UITableViewDataSource{
             let user = db.collection("Users").document((currentUser?.uid)!)
             user.getDocument { (value, Error) in
                 var getCarArray = (value!["Cars"] as? [String])!
-                let deleteIndex = indexPath.row*5
+                let deleteIndex = indexPath.row * 5
                 for _ in 0..<5 {
                     getCarArray.remove(at: deleteIndex)
                 }
                 self.carArray = getCarArray
                 self.vehicleTableView.reloadData()
-                user.updateData([
-                    "Cars":getCarArray,
-                    ])
-
+                user.updateData(["Cars":getCarArray])
             }
 
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row{
-        default:
             let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "VehicleInformationViewController") as! VehicleInformationViewController
             destinationVC.passCarIndex = indexPath.row * 5
             destinationVC.cameFromVehicleMenu=true
             self.navigationController!.pushViewController(destinationVC, animated: true)
-        }
     }
     
     

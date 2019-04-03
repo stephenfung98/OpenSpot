@@ -532,9 +532,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VY1-Nx-FKo">
-                                <rect key="frame" x="0.0" y="64" width="414" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VY1-Nx-FKo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="VNY-qy-gFG" customClass="MenuOptionCell" customModule="OpenSpot">
@@ -553,6 +552,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HgX-3D-sJO" firstAttribute="trailing" secondItem="VY1-Nx-FKo" secondAttribute="trailing" id="FEa-Z1-vcV"/>
+                            <constraint firstItem="HgX-3D-sJO" firstAttribute="bottom" secondItem="VY1-Nx-FKo" secondAttribute="bottom" id="GKI-Nt-s6c"/>
+                            <constraint firstItem="HgX-3D-sJO" firstAttribute="top" secondItem="VY1-Nx-FKo" secondAttribute="top" id="VJ8-i3-7vM"/>
+                            <constraint firstItem="VY1-Nx-FKo" firstAttribute="leading" secondItem="HgX-3D-sJO" secondAttribute="leading" id="s8u-uV-rol"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HgX-3D-sJO"/>
                     </view>
                     <navigationItem key="navigationItem" id="VMb-YV-jaP"/>
