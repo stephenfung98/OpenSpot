@@ -100,6 +100,8 @@ class FirstViewController: UIViewController, FUIAuthDelegate {
             break
         case .authorizedAlways:
             break
+        default:
+            break
         }
     }
 }

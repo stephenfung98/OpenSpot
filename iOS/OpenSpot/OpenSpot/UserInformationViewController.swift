@@ -26,7 +26,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         dayTextField.underlined()
         monthTextField.underlined()
         yearTextField.underlined()
-        self.title = "Sign up"
+        self.title = "User information"
         checkAccountExists()
     }
     
@@ -34,7 +34,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         let db = Firestore.firestore()
         let currentUser = Auth.auth().currentUser
         db.collection("Users").document((currentUser?.uid)!).getDocument { (value, Error) in
-            if value!["fullName"] != nil{
+            if value?["fullName"] != nil{
                 self.newUser = false
                 self.fullNameTextField.text = value!["fullName"] as? String
                 self.emailTextField.text = value!["email"] as? String

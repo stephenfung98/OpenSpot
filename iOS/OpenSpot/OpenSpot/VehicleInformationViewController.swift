@@ -215,10 +215,10 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
         self.present(controller, animated: true, completion: nil)
         
         db.collection("Users").document((currentUser?.uid)!).setData([
-            "phoneNumber": currentUser?.phoneNumber!,
-            "fullName": fullName,
-            "email": email,
-            "dateOfBirth": dateOfBirth,
+            "phoneNumber": currentUser?.phoneNumber! as Any,
+            "fullName": fullName as Any,
+            "email": email as Any,
+            "dateOfBirth": dateOfBirth as Any,
             "Cars": []
             ])
     }
@@ -241,10 +241,10 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
 
             if (isSignedUpVar==false){
                 db.collection("Users").document((currentUser?.uid)!).setData([
-                    "phoneNumber": currentUser?.phoneNumber!,
-                    "fullName": fullName,
-                    "email": email,
-                    "dateOfBirth": dateOfBirth,
+                    "phoneNumber": currentUser?.phoneNumber! as Any,
+                    "fullName": fullName as Any,
+                    "email": email as Any,
+                    "dateOfBirth": dateOfBirth as Any,
                     "Cars":[make.text!,model.text!,color.text!,state.text!,license.text!]
                     ])
             }else{
