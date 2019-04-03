@@ -351,6 +351,7 @@
                         <outlet property="license" destination="jrL-xP-J73" id="5Nq-xd-1Vg"/>
                         <outlet property="make" destination="A1w-MR-j4s" id="Wcf-at-nBh"/>
                         <outlet property="model" destination="hqN-RN-VFc" id="S5S-Y4-9gC"/>
+                        <outlet property="skipButton" destination="1aU-3C-Rbg" id="X5z-oO-xed"/>
                         <outlet property="state" destination="cSm-D0-MRJ" id="6kf-WT-N6z"/>
                     </connections>
                 </viewController>
@@ -422,6 +423,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuy-wP-77j" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1481" y="0.0"/>
+        </scene>
+        <!--Vehicle View Controller-->
+        <scene sceneID="7nQ-Dr-2Gc">
+            <objects>
+                <viewController storyboardIdentifier="VehicleViewController" id="yy7-0c-itP" customClass="VehicleViewController" customModule="OpenSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zpe-1n-Bzc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-qE-tld">
+                                <rect key="frame" x="0.0" y="64" width="414" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="UHs-NB-qj2" customClass="MenuOptionCell" customModule="OpenSpot">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UHs-NB-qj2" id="1hR-3p-gZW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yy7-0c-itP" id="eTg-Qi-Doc"/>
+                                    <outlet property="delegate" destination="yy7-0c-itP" id="280-Gt-icW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KCX-w2-fqt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rBw-yI-TfZ"/>
+                    <connections>
+                        <outlet property="vehicleTableView" destination="Mnj-qE-tld" id="hE4-Lj-cYY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lui-59-MWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3243" y="-15"/>
+        </scene>
+        <!--Vehicle Navigation Controller-->
+        <scene sceneID="tfN-69-BlR">
+            <objects>
+                <navigationController storyboardIdentifier="VehicleNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3jQ-Ei-n58" customClass="VehicleNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Egh-9Y-QhF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yy7-0c-itP" kind="relationship" relationship="rootViewController" id="oaW-8t-j0w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFl-0z-MuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="-15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PrR-uU-2eT">
