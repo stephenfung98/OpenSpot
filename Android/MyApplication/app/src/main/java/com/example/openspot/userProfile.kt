@@ -81,11 +81,12 @@ class userProfile : AppCompatActivity() {
 
     private fun updateDisplay() {
         this.mPickDate?.setText(
-            StringBuilder()
-                // Month is 0 based so add 1
-                .append(mMonth + 1).append("-")
-                .append(mDay).append("-")
-                .append(mYear).append(" ")
+//            StringBuilder()
+//                // Month is 0 based so add 1
+//                .append(mMonth + 1).append("/")
+//                .append(mDay).append("/")
+//                .append(mYear).append(" ")
+        dateAssembmly()
         )
     }
 
@@ -109,7 +110,7 @@ class userProfile : AppCompatActivity() {
     }
 
     private fun isValidName(name: String): Boolean {
-        //checks to see if name doesnt have any special chars or numbers, if so, returns true
+        //checks to see if name doesn't have any special chars or numbers, if so, returns true
 
 //method1
 //        val inputStr = name
@@ -126,34 +127,59 @@ class userProfile : AppCompatActivity() {
                 return false
             }
         }
-        return true
+        return name.contains(" ")
     }
 
     private fun isValidEmail(email: String): Boolean {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
+    private fun isValidDOB(): Boolean{
+        if (mDay>31){
+            return false
+        }
+        if (mMonth>12){
+            return false
+        }
+        if (mYear>2004){
+            Toast.makeText(applicationContext, "Must be old enough to drive!", Toast.LENGTH_LONG)
+                .show()
+            return false
+        }
+        return true
+    }
+
 
     private fun validForm(): Boolean {
         val fullName = editFullName!!.text.toString()
         val email = editEmail!!.text.toString()
-        val dob = editDOB?.text.toString()
+//        val dob = editDOB?.text.toString()
 
         //if they are empty
-        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(email) || TextUtils.isEmpty(dob)) {
+        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(email)) {
             Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
                 .show()
             return false
         } else {
             //if fields are not empty
             if (!isValidName(fullName)) {
-                Toast.makeText(applicationContext, "Please enter valid name", Toast.LENGTH_LONG)
+                Toast.makeText(applicationContext, "Please enter valid Name", Toast.LENGTH_LONG)
                     .show()
                 return false
             } else if(!isValidEmail(email)) {
                 Toast.makeText(applicationContext, "Please enter valid Email", Toast.LENGTH_LONG)
                     .show()
                 return false
+            } else if(!isValidDOB()) {
+                if (mYear > 2004) {
+                    Toast.makeText(applicationContext, "Must be old enough to drive!", Toast.LENGTH_LONG)
+                        .show()
+                    return false
+                } else {
+                    Toast.makeText(applicationContext, "Please enter valid Birthday", Toast.LENGTH_LONG)
+                        .show()
+                    return false
+                }
             } else {
                 return true
             }
@@ -165,11 +191,28 @@ class userProfile : AppCompatActivity() {
         showDialog(DATE_DIALOG_ID)
     }
 
+    fun dateAssembmly(): String{
+        val sb = StringBuilder()
+        if (mMonth<10){
+            sb.append("0"+mMonth.toString()+"/")
+        } else {
+            sb.append(mMonth.toString()+"/")
+        }
+        if(mDay<10){
+            sb.append("0"+mDay.toString()+"/")
+        }else {
+            sb.append(mDay.toString()+"/")
+        }
+        sb.append(mYear)
+        return sb.toString()
+    }
+
     fun nextButton(v:View) {
         if (validForm()) {
             val i = Intent(this@userProfile, VehicleInfoActivity::class.java)
             i.putExtra("full_name", editFullName!!.text.toString())
             i.putExtra("email", editEmail!!.text.toString())
+            i.putExtra("DOB", dateAssembmly())
 //            i.putExtra("DOB", editDOB!!.text.toString())
 
             //this code is for the next vehicle info activity to use these inputs
