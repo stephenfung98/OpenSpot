@@ -73,6 +73,9 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
         case 2:
             print("2")
         case 3:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "VehicleNavigationController")
+            self.present(controller, animated: false, completion: nil)
             print("3")
         case 4:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
