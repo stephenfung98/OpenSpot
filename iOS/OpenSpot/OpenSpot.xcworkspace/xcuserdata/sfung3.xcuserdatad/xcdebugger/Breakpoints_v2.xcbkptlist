@@ -106,7 +106,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
-            endingLineNumber = "107">
+            endingLineNumber = "107"
+            landmarkName = "ThirdViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,7 +122,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
-            endingLineNumber = "107">
+            endingLineNumber = "107"
+            landmarkName = "ThirdViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/UserInformationViewController.swift"
-            timestampString = "575964836.273587"
+            timestampString = "576027100.56119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -194,7 +198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/SupportViewController.swift"
-            timestampString = "575964836.273916"
+            timestampString = "576027100.561819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"

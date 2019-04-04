@@ -16,6 +16,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var monthTextField: UITextField!
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     var newUser = true
     override func viewDidLoad() {
@@ -26,6 +27,14 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         dayTextField.underlined()
         monthTextField.underlined()
         yearTextField.underlined()
+        phoneNumberTextField.underlinedBlack()
+        let currentUser = Auth.auth().currentUser
+        var phoneNumberWithSpaces = currentUser!.phoneNumber
+        phoneNumberWithSpaces!.insert(string: " (", ind: 2)
+        phoneNumberWithSpaces!.insert(string: ") ", ind: 7)
+        phoneNumberWithSpaces!.insert(string: "-", ind: 12)
+        self.phoneNumberTextField.text = phoneNumberWithSpaces
+        
         self.title = "User information"
         checkAccountExists()
     }
@@ -36,6 +45,11 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         db.collection("Users").document((currentUser?.uid)!).getDocument { (value, Error) in
             if value?["fullName"] != nil{
                 self.newUser = false
+                self.fullNameTextField.underlinedBlack()
+                self.monthTextField.underlinedBlack()
+                self.dayTextField.underlinedBlack()
+                self.yearTextField.underlinedBlack()
+                
                 self.fullNameTextField.text = value!["fullName"] as? String
                 self.emailTextField.text = value!["email"] as? String
                 let dob = value!["dateOfBirth"] as? String
@@ -147,4 +161,8 @@ extension String {
         let idx2 = index(startIndex, offsetBy: min(self.count, range.upperBound))
         return String(self[idx1..<idx2])
     }
+        mutating func insert(string:String,ind:Int) {
+            self.insert(contentsOf: string, at:self.index(self.startIndex, offsetBy: ind) )
+        }
+    
 }

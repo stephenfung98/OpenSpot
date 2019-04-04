@@ -147,7 +147,7 @@
                                             <outlet property="delegate" destination="IbB-Kr-WLg" id="q7r-mE-Abo"/>
                                         </connections>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sSa-tx-18t">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSa-tx-18t">
                                         <rect key="frame" x="0.0" y="116" width="384" height="23"/>
                                         <subviews>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJD-CS-tnh">
@@ -165,8 +165,23 @@
                                                     <outlet property="delegate" destination="IbB-Kr-WLg" id="rQo-Ym-ttq"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="/" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5b3-Gs-FMM">
+                                                <rect key="frame" x="32" y="0.0" width="16" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="16" id="o6b-Jf-tJH"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="IbB-Kr-WLg" id="Rzg-cM-0SB"/>
+                                                </connections>
+                                            </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K39-h4-qme">
-                                                <rect key="frame" x="42" y="0.0" width="32" height="23"/>
+                                                <rect key="frame" x="48" y="0.0" width="32" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="QQw-et-ni4"/>
                                                 </constraints>
@@ -180,8 +195,23 @@
                                                     <outlet property="delegate" destination="IbB-Kr-WLg" id="ez1-1G-9xa"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="/" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhC-VF-4uK">
+                                                <rect key="frame" x="80" y="0.0" width="16" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="16" id="8LY-5p-waW"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="IbB-Kr-WLg" id="dYD-BD-mXh"/>
+                                                </connections>
+                                            </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oza-Am-tJd">
-                                                <rect key="frame" x="84" y="0.0" width="48" height="23"/>
+                                                <rect key="frame" x="96" y="0.0" width="48" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="iML-OC-mle"/>
                                                 </constraints>
@@ -196,7 +226,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1S-iO-UNo">
-                                                <rect key="frame" x="142" y="0.0" width="242" height="23"/>
+                                                <rect key="frame" x="144" y="0.0" width="240" height="23"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -217,6 +247,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Pp-wrv">
+                                <rect key="frame" x="15" y="367" width="384" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="IbB-Kr-WLg" id="ZxE-2B-s1y"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -239,6 +282,7 @@
                         <outlet property="emailTextField" destination="FSM-8A-Fab" id="nFd-9b-Lam"/>
                         <outlet property="fullNameTextField" destination="Ix7-La-GdO" id="Ppk-HW-yf1"/>
                         <outlet property="monthTextField" destination="gJD-CS-tnh" id="tIg-9J-OXI"/>
+                        <outlet property="phoneNumberTextField" destination="RG6-Pp-wrv" id="Vmh-Fn-oYk"/>
                         <outlet property="yearTextField" destination="Oza-Am-tJd" id="eWa-eB-T3k"/>
                     </connections>
                 </viewController>
