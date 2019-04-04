@@ -35,8 +35,8 @@ class VehicleViewActivity : AppCompatActivity() {
             fm.replace(R.id.pref_container, vehicle,"vehicleFragment").commit()
 //        }
 
-        val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
-        Toast.makeText(this, "" + currentFirebaseUser?.uid, Toast.LENGTH_SHORT).show()
+//        val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
+//        Toast.makeText(this, "" + currentFirebaseUser?.uid, Toast.LENGTH_SHORT).show()
     }
 
     fun addVehicle(v: View){

@@ -175,39 +175,55 @@ EditVehicleInfoActivity : AppCompatActivity(){
                     // First item is disable and it is used for hint
                     if(position > 0){
                         // Notify the selected item text
-                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                            .show()
+//                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                            .show()
                         if(position == 1){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = acuraAdapter
+                            val carModelSpinnerPosition = acuraAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 2){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = alfaRomeoAdapter
+                            val carModelSpinnerPosition = alfaRomeoAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 3){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = astonMartinAdapter
+                            val carModelSpinnerPosition = astonMartinAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 4){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = audiAdapter
+                            val carModelSpinnerPosition = audiAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 5){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = bentleyAdapter
+                            val carModelSpinnerPosition = bentleyAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 6){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = bmwAdapter
+                            val carModelSpinnerPosition = bmwAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 7){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = buickAdapter
+                            val carModelSpinnerPosition = buickAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 8){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = cadillacAdapter
+                            val carModelSpinnerPosition = cadillacAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 9){
                             carModelSpinner.isClickable = true
@@ -216,142 +232,212 @@ EditVehicleInfoActivity : AppCompatActivity(){
                         else if(position == 10){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = chryslerAdapter
+                            val carModelSpinnerPosition = chryslerAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 11){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = dodgeAdapter
+                            val carModelSpinnerPosition = dodgeAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 12){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = ferrariAdapter
+                            val carModelSpinnerPosition = ferrariAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 13){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = fiatAdapter
+                            val carModelSpinnerPosition = fiatAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 14){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = fordAdapter
+                            val carModelSpinnerPosition = fordAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 15){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = freightlinerAdapter
+                            val carModelSpinnerPosition = freightlinerAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 16){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = genesisAdapter
+                            val carModelSpinnerPosition = genesisAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 17){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = gmcAdapter
+                            val carModelSpinnerPosition = gmcAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 18){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = hondaAdapter
+                            val carModelSpinnerPosition = hondaAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 19){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = hyundaiAdapter
+                            val carModelSpinnerPosition = hyundaiAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 20){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = infinitiAdapter
+                            val carModelSpinnerPosition = infinitiAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 21){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = jaguarAdapter
+                            val carModelSpinnerPosition = jaguarAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 22){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = jeepAdapter
+                            val carModelSpinnerPosition = jeepAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 23){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = kiaAdapter
+                            val carModelSpinnerPosition = kiaAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 24){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = lamborghiniAdapter
+                            val carModelSpinnerPosition = lamborghiniAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 25){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = landRoverAdapter
+                            val carModelSpinnerPosition = landRoverAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 26){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = lexusAdapter
+                            val carModelSpinnerPosition = lexusAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 27){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = lincolnAdapter
+                            val carModelSpinnerPosition = lincolnAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 28){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = lotusAdapter
+                            val carModelSpinnerPosition = lotusAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 29){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = maseratiAdapter
+                            val carModelSpinnerPosition = maseratiAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 30){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = mazdaAdapter
+                            val carModelSpinnerPosition = mazdaAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 31){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = mclarenAdapter
+                            val carModelSpinnerPosition = mclarenAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 32){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = mercedesbenzAdapter
+                            val carModelSpinnerPosition = mercedesbenzAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 33){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = miniAdapter
+                            val carModelSpinnerPosition = miniAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 34){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = mitsubishiAdapter
+                            val carModelSpinnerPosition = mitsubishiAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 35){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = nissanAdapter
+                            val carModelSpinnerPosition = nissanAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 36){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = porscheAdapter
+                            val carModelSpinnerPosition = porscheAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 37){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = ramAdapter
+                            val carModelSpinnerPosition = ramAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 38){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = rollsroyceAdapter
+                            val carModelSpinnerPosition = rollsroyceAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 39){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = smartAdapter
+                            val carModelSpinnerPosition = smartAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 40){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = subaruAdapter
+                            val carModelSpinnerPosition = subaruAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 41){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = teslaAdapter
+                            val carModelSpinnerPosition = teslaAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 42){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = toyotaAdapter
+                            val carModelSpinnerPosition = toyotaAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else if(position == 43){
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = volkswagenAdapter
+                            val carModelSpinnerPosition = volkswagenAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                         else{
                             carModelSpinner.isClickable = true
                             carModelSpinner.adapter = volvoAdapter
+                            val carModelSpinnerPosition = volvoAdapter.getPosition(carModelData)
+                            carModelSpinner.setSelection(carModelSpinnerPosition)
                         }
                     }
                 }
@@ -399,22 +485,22 @@ EditVehicleInfoActivity : AppCompatActivity(){
             carColorDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
             carColorSpinner.adapter = carColorDataAdapter
 
-            carColorSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                    var selectedItemText =  parent.getItemAtPosition(position)
-                    // If user change the default selection
-                    // First item is disable and it is used for hint
-                    if(position > 0) {
-                        // Notify the selected item text
-                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
-            }
+//            carColorSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//                override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                    var selectedItemText =  parent.getItemAtPosition(position)
+//                    // If user change the default selection
+//                    // First item is disable and it is used for hint
+//                    if(position > 0) {
+//                        // Notify the selected item text
+//                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                            .show()
+//                    }
+//                }
+//
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//                }
+//            }
             //*****************State Location Spinner********************//
             val carStates = arrayListOf("Select a State","Alabama",
                 "Alaska",
@@ -486,33 +572,25 @@ EditVehicleInfoActivity : AppCompatActivity(){
             carStateDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
             carStateSpinner.adapter = carStateDataAdapter
 
-            carStateSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                    var selectedItemText =  parent.getItemAtPosition(position)
+//            carStateSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//                override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                    var selectedItemText =  parent.getItemAtPosition(position)
                     // If user change the default selection
                     // First item is disable and it is used for hint
-                    if(position > 0) {
-                        // Notify the selected item text
-                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                }
+//                    if(position > 0) {
+//                        // Notify the selected item text
+//                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                            .show()
+//                    }
+//                }
+//
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//                }
+//            }
 
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
-            }
-
-        var carNumber = counterData.toString()[counterData.toString().length-1].toInt()
         val carMakeSpinnerPosition = carMakeDataAdapter.getPosition(carMakeData)
-            Log.d(TAG,"POSITION: ${carMakeDataAdapter.getPosition(carMakeData)}")
-            Log.d(TAG,"POSITION: ${(carNumber)}")
-
-
         carMakeSpinner.setSelection(carMakeSpinnerPosition)
-
-        val carModelSpinnerPosition = carModelDataAdapter.getPosition(carModelData)
-        carModelSpinner.setSelection(carModelSpinnerPosition)
 
         val carColorSpinnerPosition = carColorDataAdapter.getPosition(carColorData)
         carColorSpinner.setSelection(carColorSpinnerPosition)

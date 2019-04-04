@@ -221,8 +221,8 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                 // First item is disable and it is used for hint
                 if(position > 0){
                     // Notify the selected item text
-                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                        .show()
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
                     if(position == 1){
                         carModelSpinner.isClickable = true
                         carModelSpinner.adapter = acuraAdapter
@@ -446,22 +446,22 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         carColorDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
         carColorSpinner.adapter = carColorDataAdapter
 
-        carColorSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                var selectedItemText =  parent.getItemAtPosition(position)
-                // If user change the default selection
-                // First item is disable and it is used for hint
-                if(position > 0) {
-                    // Notify the selected item text
-                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        }
+//        carColorSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                var selectedItemText =  parent.getItemAtPosition(position)
+//                // If user change the default selection
+//                // First item is disable and it is used for hint
+//                if(position > 0) {
+//                    // Notify the selected item text
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//        }
         //*****************State Location Spinner********************//
         val carStates = arrayListOf("Select a State","Alabama",
             "Alaska",
@@ -534,22 +534,22 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         carStateDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
         carStateSpinner.adapter = carStateDataAdapter
 
-        carStateSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                var selectedItemText =  parent.getItemAtPosition(position)
-                // If user change the default selection
-                // First item is disable and it is used for hint
-                if(position > 0) {
-                    // Notify the selected item text
-                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        }
+//        carStateSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                var selectedItemText =  parent.getItemAtPosition(position)
+//                // If user change the default selection
+//                // First item is disable and it is used for hint
+//                if(position > 0) {
+//                    // Notify the selected item text
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//        }
     }
 
      private fun saveVehicleInfo(v :View){

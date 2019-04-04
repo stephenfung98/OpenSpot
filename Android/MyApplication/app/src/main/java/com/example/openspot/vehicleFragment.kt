@@ -30,7 +30,7 @@ class VehicleFragment : PreferenceFragmentCompat() {
         var carArray :Any?
 
 
-        Toast.makeText(activity!!.baseContext, "" + currentFirebaseUser?.uid, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(activity!!.baseContext, "" + currentFirebaseUser?.uid, Toast.LENGTH_SHORT).show()
         val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
         docRef.get()
             .addOnSuccessListener { document ->
@@ -59,7 +59,6 @@ class VehicleFragment : PreferenceFragmentCompat() {
                                 carButton.setOnPreferenceClickListener{
                                     AuthUI.getInstance()
                                     val intent = Intent(activity!!.baseContext, EditVehicleInfoActivity::class.java)
-                                    intent.putExtra("carArray",a)
                                     intent.putExtra("carState", a[i-1])
                                     intent.putExtra("carColor", a[i-2])
                                     intent.putExtra("carModel", a[i-3])

@@ -63,7 +63,7 @@ class NavigationActivity : AppCompatActivity() {
             val docRef = db.collection("Users").document(user.uid)
             docRef.get()
                 .addOnSuccessListener { document ->
-                    Toast.makeText(applicationContext, "" + user.uid, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(applicationContext, "" + user.uid, Toast.LENGTH_SHORT).show()
 
                     if (!document.exists()) {
                     val intent = Intent(this@NavigationActivity, VehicleInfoActivity::class.java)
