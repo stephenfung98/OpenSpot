@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="HQO-P4-W3W">
-                                <rect key="frame" x="15" y="193.5" width="384" height="139"/>
+                                <rect key="frame" x="15" y="193.5" width="384" height="197"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ix7-La-GdO">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="23"/>
@@ -239,6 +239,18 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Pp-wrv">
+                                        <rect key="frame" x="0.0" y="174" width="384" height="23"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="IbB-Kr-WLg" id="ZxE-2B-s1y"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your information in order to be able to start booking driveways" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-He-oFH">
@@ -247,19 +259,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Pp-wrv">
-                                <rect key="frame" x="15" y="367" width="384" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="IbB-Kr-WLg" id="ZxE-2B-s1y"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
