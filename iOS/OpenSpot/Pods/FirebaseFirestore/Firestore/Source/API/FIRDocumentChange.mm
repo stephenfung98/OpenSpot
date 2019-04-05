@@ -18,14 +18,13 @@
 
 #import "Firestore/Source/API/FIRDocumentSnapshot+Internal.h"
 #import "Firestore/Source/Core/FSTQuery.h"
+#import "Firestore/Source/Core/FSTViewSnapshot.h"
 #import "Firestore/Source/Model/FSTDocument.h"
 #import "Firestore/Source/Model/FSTDocumentSet.h"
 
-#include "Firestore/core/src/firebase/firestore/core/view_snapshot.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 
-using firebase::firestore::core::DocumentViewChange;
-using firebase::firestore::core::ViewSnapshot;
+using firebase::firestore::core::DocumentViewChangeType;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,39 +39,39 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation FIRDocumentChange (Internal)
 
-+ (FIRDocumentChangeType)documentChangeTypeForChange:(const DocumentViewChange &)change {
-  switch (change.type()) {
-    case DocumentViewChange::Type::kAdded:
++ (FIRDocumentChangeType)documentChangeTypeForChange:(FSTDocumentViewChange *)change {
+  switch (change.type) {
+    case DocumentViewChangeType::kAdded:
       return FIRDocumentChangeTypeAdded;
-    case DocumentViewChange::Type::kModified:
-    case DocumentViewChange::Type::kMetadata:
+    case DocumentViewChangeType::kModified:
+    case DocumentViewChangeType::kMetadata:
       return FIRDocumentChangeTypeModified;
-    case DocumentViewChange::Type::kRemoved:
+    case DocumentViewChangeType::kRemoved:
       return FIRDocumentChangeTypeRemoved;
   }
 
-  HARD_FAIL("Unknown DocumentViewChange::Type: %s", change.type());
+  HARD_FAIL("Unknown DocumentViewChangeTyp: %s", change.type);
 }
 
-+ (NSArray<FIRDocumentChange *> *)documentChangesForSnapshot:(const ViewSnapshot &)snapshot
++ (NSArray<FIRDocumentChange *> *)documentChangesForSnapshot:(FSTViewSnapshot *)snapshot
                                       includeMetadataChanges:(BOOL)includeMetadataChanges
                                                    firestore:(FIRFirestore *)firestore {
-  if (snapshot.old_documents().isEmpty) {
+  if (snapshot.oldDocuments.isEmpty) {
     // Special case the first snapshot because index calculation is easy and fast. Also all changes
     // on the first snapshot are adds so there are also no metadata-only changes to filter out.
     FSTDocument *_Nullable lastDocument = nil;
     NSUInteger index = 0;
     NSMutableArray<FIRDocumentChange *> *changes = [NSMutableArray array];
-    for (const DocumentViewChange &change : snapshot.document_changes()) {
+    for (FSTDocumentViewChange *change in snapshot.documentChanges) {
       FIRQueryDocumentSnapshot *document = [FIRQueryDocumentSnapshot
           snapshotWithFirestore:firestore
-                    documentKey:change.document().key
-                       document:change.document()
-                      fromCache:snapshot.from_cache()
-               hasPendingWrites:snapshot.mutated_keys().contains(change.document().key)];
-      HARD_ASSERT(change.type() == DocumentViewChange::Type::kAdded,
+                    documentKey:change.document.key
+                       document:change.document
+                      fromCache:snapshot.isFromCache
+               hasPendingWrites:snapshot.mutatedKeys.contains(change.document.key)];
+      HARD_ASSERT(change.type == DocumentViewChangeType::kAdded,
                   "Invalid event type for first snapshot");
-      HARD_ASSERT(!lastDocument || snapshot.query().comparator(lastDocument, change.document()) ==
+      HARD_ASSERT(!lastDocument || snapshot.query.comparator(lastDocument, change.document) ==
                                        NSOrderedAscending,
                   "Got added events in wrong order");
       [changes addObject:[[FIRDocumentChange alloc] initWithType:FIRDocumentChangeTypeAdded
@@ -84,30 +83,30 @@ NS_ASSUME_NONNULL_BEGIN
   } else {
     // A DocumentSet that is updated incrementally as changes are applied to use to lookup the index
     // of a document.
-    FSTDocumentSet *indexTracker = snapshot.old_documents();
+    FSTDocumentSet *indexTracker = snapshot.oldDocuments;
     NSMutableArray<FIRDocumentChange *> *changes = [NSMutableArray array];
-    for (const DocumentViewChange &change : snapshot.document_changes()) {
-      if (!includeMetadataChanges && change.type() == DocumentViewChange::Type::kMetadata) {
+    for (FSTDocumentViewChange *change in snapshot.documentChanges) {
+      if (!includeMetadataChanges && change.type == DocumentViewChangeType::kMetadata) {
         continue;
       }
 
       FIRQueryDocumentSnapshot *document = [FIRQueryDocumentSnapshot
           snapshotWithFirestore:firestore
-                    documentKey:change.document().key
-                       document:change.document()
-                      fromCache:snapshot.from_cache()
-               hasPendingWrites:snapshot.mutated_keys().contains(change.document().key)];
+                    documentKey:change.document.key
+                       document:change.document
+                      fromCache:snapshot.isFromCache
+               hasPendingWrites:snapshot.mutatedKeys.contains(change.document.key)];
 
       NSUInteger oldIndex = NSNotFound;
       NSUInteger newIndex = NSNotFound;
-      if (change.type() != DocumentViewChange::Type::kAdded) {
-        oldIndex = [indexTracker indexOfKey:change.document().key];
+      if (change.type != DocumentViewChangeType::kAdded) {
+        oldIndex = [indexTracker indexOfKey:change.document.key];
         HARD_ASSERT(oldIndex != NSNotFound, "Index for document not found");
-        indexTracker = [indexTracker documentSetByRemovingKey:change.document().key];
+        indexTracker = [indexTracker documentSetByRemovingKey:change.document.key];
       }
-      if (change.type() != DocumentViewChange::Type::kRemoved) {
-        indexTracker = [indexTracker documentSetByAddingDocument:change.document()];
-        newIndex = [indexTracker indexOfKey:change.document().key];
+      if (change.type != DocumentViewChangeType::kRemoved) {
+        indexTracker = [indexTracker documentSetByAddingDocument:change.document];
+        newIndex = [indexTracker indexOfKey:change.document.key];
       }
       [FIRDocumentChange documentChangeTypeForChange:change];
       FIRDocumentChangeType type = [FIRDocumentChange documentChangeTypeForChange:change];

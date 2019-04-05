@@ -10,7 +10,6 @@ import UIKit
 
 enum MenuOption: Int, CustomStringConvertible {
     
-    case Person
     case Driveway
     case Payment
     case Vehicle
@@ -19,7 +18,6 @@ enum MenuOption: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .Person: return "Loading name"
         case .Driveway: return "List your driveway"
         case .Payment: return "Payment"
         case .Vehicle: return "Vehicle"
@@ -30,7 +28,6 @@ enum MenuOption: Int, CustomStringConvertible {
     
     var image: UIImage {
         switch self {
-        case .Person: return UIImage(named: "Person") ?? UIImage()
         case .Driveway: return UIImage(named: "Driveway") ?? UIImage()
         case .Payment: return UIImage(named: "Payment") ?? UIImage()
         case .Vehicle: return UIImage(named: "Vehicle") ?? UIImage()
