@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseUI
+import Firebase
 
 class ThirdViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var menuTableView: UITableView!
@@ -30,35 +31,58 @@ class ThirdViewController: UIViewController, FUIAuthDelegate {
         if ThirdViewController.isLoggedOut == true{
             self.tabBarController?.selectedIndex = 0
         }
+        menuTableView.reloadData()
     }
     
 }
 
 extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MenuOptionCell
         cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MenuOptionCell
         let menuOption = MenuOption(rawValue: indexPath.row)
-        cell.descriptionLabel.text = menuOption?.description
         cell.iconImageView.image = menuOption?.image
-        return cell
+        
+        if indexPath.row == 0 {
+            let db = Firestore.firestore()
+            let currentUser = Auth.auth().currentUser
+            db.collection("Users").document((currentUser?.uid)!).getDocument { (value, Error) in
+                cell.descriptionLabel.text = value!["fullName"] as? String
+            }
+            return cell
+        }
+        else{
+            cell.descriptionLabel.text = menuOption?.description
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row{
         case 0:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "NavigationController")
+            self.present(controller, animated: false, completion: nil)
             print("0")
         case 1:
             print("1")
         case 2:
             print("2")
         case 3:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "VehicleNavigationController")
+            self.present(controller, animated: false, completion: nil)
             print("3")
         case 4:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "SupportNavigationController")
+            self.present(controller, animated: false, completion: nil)
+            print("4")
+        case 5:
             logOut()
         default:
             print("else")
@@ -81,3 +105,5 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
+
+
