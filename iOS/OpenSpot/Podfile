@@ -9,7 +9,6 @@ target 'OpenSpot' do
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Firestore'
-pod 'Firebase/Core'
 
 
   target 'OpenSpotTests' do
@@ -25,7 +24,6 @@ pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Firestore'
-pod 'Firebase/Core'
   end
 end
 
