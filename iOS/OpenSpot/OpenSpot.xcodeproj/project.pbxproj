@@ -838,7 +838,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4KBD465JXX;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				INFOPLIST_FILE = OpenSpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -860,7 +860,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4KBD465JXX;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				INFOPLIST_FILE = OpenSpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -880,8 +880,9 @@
 			baseConfigurationReference = 2854F5D1C33F1BC07BCB6106 /* Pods-OpenSpotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4KBD465JXX;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = OpenSpotUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -889,8 +890,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jay.OpenSpotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OpenSpot;
@@ -902,8 +904,9 @@
 			baseConfigurationReference = 33547ADBA8A2B1DB1F15F228 /* Pods-OpenSpotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4KBD465JXX;
+				DEVELOPMENT_TEAM = D7ZQ7ZU696;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = OpenSpotUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -911,8 +914,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jayll.OpenSpotUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.buffalo.jay.OpenSpotUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OpenSpot;
