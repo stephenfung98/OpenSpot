@@ -10,7 +10,7 @@ import XCTest
 import Firebase
 @testable import OpenSpot
 
-class OpenSpotTests: XCTestCase {
+class OpenSpotTestsSprint1: XCTestCase {
     let firstViewController = FirstViewController()
     let thirdViewController = ThirdViewController()
     override func setUp() {

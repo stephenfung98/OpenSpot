@@ -27,7 +27,7 @@ class OpenSpotUITestsSprint2: XCTestCase {
     }
     
     //    Stephen
-    func testInputGeneralData_38() {
+    func testAddGeneralData_38() {
         let app = XCUIApplication()
         if app.scrollViews.otherElements.buttons["Sign in with phone"].exists{
             app.scrollViews.otherElements.buttons["Sign in with phone"].tap()
@@ -55,8 +55,32 @@ class OpenSpotUITestsSprint2: XCTestCase {
             key.tap()
             app.navigationBars["Verify phone number"].buttons["Next"].tap()
         }
-        
+        sleep(3)
+        if app.textFields["Full Name"].exists{
+            app.textFields["Full Name"].tap()
+            app.textFields["Full Name"].typeText("Stephen Fung")
+            
+            app.textFields["Email"].tap()
+            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            
+            app.textFields["MM"].tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["1"]/*[[".keyboards.keys[\"1\"]",".keys[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["8"]/*[[".keyboards.keys[\"8\"]",".keys[\"8\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            while !app.toolbars["Toolbar"].buttons["Done"].exists {}
+            app.toolbars["Toolbar"].buttons["Done"].tap()
+            app.buttons["NextArrow"].tap()
+            while !app.navigationBars["Vehicle Information"].exists {}
+            app.buttons["Skip"].tap()
+        }
     }
+    
     //    Jay
     func testInputVehicle_39() {
         let app = XCUIApplication()
@@ -86,9 +110,7 @@ class OpenSpotUITestsSprint2: XCTestCase {
             key.tap()
             app.navigationBars["Verify phone number"].buttons["Next"].tap()
         }
-        
         sleep(3)
-        
         if app.textFields["Full Name"].exists{
             app.textFields["Full Name"].tap()
             app.textFields["Full Name"].typeText("Jay Stephen")
@@ -124,14 +146,156 @@ class OpenSpotUITestsSprint2: XCTestCase {
         
         
     }
+    
     //    Jay & Stephen
     func testSendToFirebase_40() {
     }
+    
     //    Stephen
     func testEditPersonalData_42() {
+        let app = XCUIApplication()
+        if app.scrollViews.otherElements.buttons["Sign in with phone"].exists{
+            app.scrollViews.otherElements.buttons["Sign in with phone"].tap()
+            let key = app.keyboards.keys["1"]
+            while !key.exists {
+            }
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            app.navigationBars["Enter phone number"].buttons["Verify"].tap()
+            while !key.exists {
+            }
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            app.navigationBars["Verify phone number"].buttons["Next"].tap()
+        }
+        sleep(3)
+        if app.textFields["Full Name"].exists{
+            app.textFields["Full Name"].tap()
+            app.textFields["Full Name"].typeText("Stephen Fung")
+            
+            app.textFields["Email"].tap()
+            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            
+            app.textFields["MM"].tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["1"]/*[[".keyboards.keys[\"1\"]",".keys[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["8"]/*[[".keyboards.keys[\"8\"]",".keys[\"8\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            while !app.toolbars["Toolbar"].buttons["Done"].exists {}
+            app.toolbars["Toolbar"].buttons["Done"].tap()
+            app.buttons["NextArrow"].tap()
+            while !app.navigationBars["Vehicle Information"].exists {}
+            app.buttons["Skip"].tap()
+        }
+        while !app.tabBars.buttons["Settings"].exists {}
+        app.tabBars.buttons["Settings"].tap()
+        
+        app.tables.firstMatch.cells.allElementsBoundByIndex.first?.tap()
+        app.textFields["Email"].tap()
+        
+        app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.keys["delete"].tap()
+        app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["c"]/*[[".keyboards.keys[\"c\"]",".keys[\"c\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["o"]/*[[".keyboards.keys[\"o\"]",".keys[\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["m"]/*[[".keyboards.keys[\"m\"]",".keys[\"m\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.buttons["NextArrow"].tap()
+        while !app.tabBars.buttons["Settings"].exists {}
+        assert(app.tables.firstMatch.cells.allElementsBoundByIndex.first!.exists)
     }
+    
     //    Stephen
     func testContactUs_43() {
+        let app = XCUIApplication()
+        if app.scrollViews.otherElements.buttons["Sign in with phone"].exists{
+            app.scrollViews.otherElements.buttons["Sign in with phone"].tap()
+            let key = app.keyboards.keys["1"]
+            while !key.exists {
+            }
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            app.navigationBars["Enter phone number"].buttons["Verify"].tap()
+            while !key.exists {
+            }
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            key.tap()
+            app.navigationBars["Verify phone number"].buttons["Next"].tap()
+        }
+        sleep(3)
+        if app.textFields["Full Name"].exists{
+            app.textFields["Full Name"].tap()
+            app.textFields["Full Name"].typeText("Stephen Fung")
+            
+            app.textFields["Email"].tap()
+            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            
+            app.textFields["MM"].tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["1"]/*[[".keyboards.keys[\"1\"]",".keys[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["9"]/*[[".keyboards.keys[\"9\"]",".keys[\"9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app/*@START_MENU_TOKEN@*/.keys["8"]/*[[".keyboards.keys[\"8\"]",".keys[\"8\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            while !app.toolbars["Toolbar"].buttons["Done"].exists {}
+            app.toolbars["Toolbar"].buttons["Done"].tap()
+            app.buttons["NextArrow"].tap()
+            while !app.navigationBars["Vehicle Information"].exists {}
+            app.buttons["Skip"].tap()
+        }
+        while !app.tabBars.buttons["Settings"].exists {}
+        app.tabBars.buttons["Settings"].tap()
+        
+        app.tables.cells.element(boundBy: 4).tap()
+        
+        app.textFields["Subject"].tap()
+        app.textFields["Subject"].typeText("This email is being sent from UI tests")
+        
+        
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element.tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element.typeText("This is the body of the email being sent from UI tests")
+        
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.buttons["SendMail"].tap()
+        app.navigationBars["This email is being sent from UI tests"].buttons["Send"].tap()
+        
+        assert(app.navigationBars["Contact us"].exists)
+        app.navigationBars["Contact us"].otherElements["Contact us"].tap()
+        app.navigationBars["Contact us"].buttons["Close"].tap()
+        
+        assert(app.tables.cells.element(boundBy: 4).exists)
     }
     
     //    Jay
@@ -163,7 +327,6 @@ class OpenSpotUITestsSprint2: XCTestCase {
             key.tap()
             app.navigationBars["Verify phone number"].buttons["Next"].tap()
         }
-        
         sleep(3)
         
         if app.textFields["Full Name"].exists{
@@ -197,7 +360,6 @@ class OpenSpotUITestsSprint2: XCTestCase {
             app/*@START_MENU_TOKEN@*/.pickerWheels["Black"]/*[[".pickers.pickerWheels[\"Black\"]",".pickerWheels[\"Black\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.adjust(toPickerWheelValue: "White")
             app.toolbars["Toolbar"].buttons["Done"].tap()
             app.buttons["Check"].tap()
-
         }
 
         while !app.tabBars.buttons["Settings"].exists {}
@@ -257,7 +419,6 @@ class OpenSpotUITestsSprint2: XCTestCase {
             key.tap()
             app.navigationBars["Verify phone number"].buttons["Next"].tap()
         }
-        
         sleep(3)
         
         if app.textFields["Full Name"].exists{
@@ -364,7 +525,6 @@ class OpenSpotUITestsSprint2: XCTestCase {
             key.tap()
             app.navigationBars["Verify phone number"].buttons["Next"].tap()
         }
-        
         sleep(3)
         
         if app.textFields["Full Name"].exists{
@@ -429,7 +589,6 @@ class OpenSpotUITestsSprint2: XCTestCase {
         app.tables.staticTexts["Maserati Levante"].swipeLeft()
         app.tables.staticTexts["Maserati Levante"].swipeLeft()
         sleep(1)
-        
     }
     
 }
