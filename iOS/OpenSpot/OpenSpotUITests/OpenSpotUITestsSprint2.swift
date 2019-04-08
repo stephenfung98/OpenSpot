@@ -289,6 +289,7 @@ class OpenSpotUITestsSprint2: XCTestCase {
         
         app.toolbars["Toolbar"].buttons["Done"].tap()
         app.buttons["SendMail"].tap()
+        while !app.navigationBars["This email is being sent from UI tests"].buttons["Send"].exists {}
         app.navigationBars["This email is being sent from UI tests"].buttons["Send"].tap()
         
         assert(app.navigationBars["Contact us"].exists)
