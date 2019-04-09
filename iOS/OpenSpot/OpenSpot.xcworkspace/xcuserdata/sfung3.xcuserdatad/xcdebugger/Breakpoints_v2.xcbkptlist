@@ -101,38 +101,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenSpot/ThirdViewController.swift"
-            timestampString = "576135466.994532"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "ThirdViewController"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenSpot/ThirdViewController.swift"
-            timestampString = "576135466.996828"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "ThirdViewController"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OpenSpot/FirstViewController.swift"
             timestampString = "575964836.273476"
             startingColumnNumber = "9223372036854775807"
@@ -182,7 +150,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpot/UserInformationViewController.swift"
-            timestampString = "576441431.443624"
+            timestampString = "576452738.0471849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -214,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpotUITests/OpenSpotUITestsSprint2.swift"
-            timestampString = "576441431.444146"
+            timestampString = "576452738.047543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "testEditVehicles_44()"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,12 +198,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenSpotUITests/OpenSpotUITestsSprint2.swift"
-            timestampString = "576441431.444784"
+            timestampString = "576452738.0480649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
             landmarkName = "testEditVehicles_44()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenSpotUITests/OpenSpotUITestsSprint2.swift"
+            timestampString = "576452738.048607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "testSendToFirebase_40()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

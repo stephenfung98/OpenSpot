@@ -68,7 +68,6 @@ extension SupportViewController: MFMailComposeViewControllerDelegate {
             mail.setToRecipients(["csecse442+support@gmail.com"])
             mail.setSubject(subjectTextField.text!)
             mail.setMessageBody(bodyTextView.text!, isHTML: false)
-            
             present(mail, animated: true)
         } else {
             // show failure alert
