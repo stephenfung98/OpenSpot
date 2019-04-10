@@ -6,4 +6,11 @@
     <string name="title_home">Home</string>
     <string name="title_reservations">Reservations</string>
     <string name="title_settings">Settings</string>
+
+    <!--//user profile strings below-->
+    <string name="fullName">Full Name</string>
+    <string name="email">Email</string>
+    <string name="DOB">MM DD YYYY</string>
+
+
 </resources>

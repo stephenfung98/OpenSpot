@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
-                val intent = Intent(this@MainActivity, NavigationActivity::class.java)
+                val intent = Intent(this@MainActivity, VehicleInfoActivity::class.java)
                 startActivity(intent)
                 finish()
             }
