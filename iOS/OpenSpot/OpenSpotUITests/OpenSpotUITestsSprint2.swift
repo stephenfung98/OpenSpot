@@ -58,10 +58,10 @@ class OpenSpotUITestsSprint2: XCTestCase {
         sleep(3)
         if app.textFields["Full Name"].exists{
             app.textFields["Full Name"].tap()
-            app.textFields["Full Name"].typeText("Stephen Fung")
+            app.textFields["Full Name"].typeText("Jay Stephen")
             
             app.textFields["Email"].tap()
-            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            app.textFields["Email"].typeText("jaystephen@gmail.com")
             
             app.textFields["MM"].tap()
             app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -147,7 +147,7 @@ class OpenSpotUITestsSprint2: XCTestCase {
         
     }
     
-    //    Stephen
+    //    Jay and Stephen
     func testSendToFirebase_40() {
         let app = XCUIApplication()
         if app.scrollViews.otherElements.buttons["Sign in with phone"].exists{
@@ -271,10 +271,10 @@ class OpenSpotUITestsSprint2: XCTestCase {
         sleep(3)
         if app.textFields["Full Name"].exists{
             app.textFields["Full Name"].tap()
-            app.textFields["Full Name"].typeText("Stephen Fung")
+            app.textFields["Full Name"].typeText("Jay Stephen")
             
             app.textFields["Email"].tap()
-            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            app.textFields["Email"].typeText("jaystephen@gmail.com")
             
             app.textFields["MM"].tap()
             app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -310,7 +310,7 @@ class OpenSpotUITestsSprint2: XCTestCase {
         assert(app.tables.firstMatch.cells.allElementsBoundByIndex.first!.exists)
     }
     
-    //   Jay & Stephen
+    //   Stephen
     func testContactUs_43() {
         let app = XCUIApplication()
         if app.scrollViews.otherElements.buttons["Sign in with phone"].exists{
@@ -342,10 +342,10 @@ class OpenSpotUITestsSprint2: XCTestCase {
         sleep(3)
         if app.textFields["Full Name"].exists{
             app.textFields["Full Name"].tap()
-            app.textFields["Full Name"].typeText("Stephen Fung")
+            app.textFields["Full Name"].typeText("Jay Stephen")
             
             app.textFields["Email"].tap()
-            app.textFields["Email"].typeText("sfung3@buffalo.edu")
+            app.textFields["Email"].typeText("jaystephen@gmail.com")
             
             app.textFields["MM"].tap()
             app/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
