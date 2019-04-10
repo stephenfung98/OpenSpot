@@ -6,16 +6,6 @@
     <string name="title_home">Home</string>
     <string name="title_reservations">Reservations</string>
     <string name="title_settings">Settings</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
     <string name="contact_form">Contact Us</string>
     <string name="contact_form_name">Your Name</string>
     <string name="contact_form_email">Your Email</string>
@@ -24,4 +14,9 @@
     <string name="contact_form_button">Send Message</string>
     <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department…</string>
     <string name="contact_posted">Your message has been successfully delivered.</string>
+    <!--//user profile strings below-->
+    <string name="fullName">Full Name</string>
+    <string name="email">Email</string>
+    <string name="DOB">MM DD YYYY</string>
 </resources>
+

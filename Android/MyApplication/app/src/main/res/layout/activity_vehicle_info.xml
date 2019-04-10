@@ -98,10 +98,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:text="Skip"
-            android:id="@+id/skipButton"
-            android:background="@color/fui_transparent"
-            android:textSize="8pt"
-            android:textColor="@color/colorPrimaryDark"
-            android:onClick="skipButton"/>
+            android:id="@+id/skipButton"/>
+
 
 </RelativeLayout>

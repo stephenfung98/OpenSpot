@@ -552,82 +552,82 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
 //        }
     }
 
-     private fun saveVehicleInfo(v :View){
-         val editText = findViewById<EditText>(R.id.edit_license)
-         val value = editText.text.toString()
-         var carArray: Any?
-         var carInfo :MutableList<String>
+    private fun saveVehicleInfo(v :View){
+        val editText = findViewById<EditText>(R.id.edit_license)
+        val value = editText.text.toString()
+        var carArray: Any?
+        var carInfo :MutableList<String>
 
 
-         val carMakeSpinner: Spinner = findViewById(R.id.spinner)
-         val carModelSpinner: Spinner = findViewById(R.id.spinner2)
-         val carColorSpinner: Spinner = findViewById(R.id.spinner3)
-         val carStateSpinner: Spinner = findViewById(R.id.spinner4)
+        val carMakeSpinner: Spinner = findViewById(R.id.spinner)
+        val carModelSpinner: Spinner = findViewById(R.id.spinner2)
+        val carColorSpinner: Spinner = findViewById(R.id.spinner3)
+        val carStateSpinner: Spinner = findViewById(R.id.spinner4)
 
 
-         if(spinner.selectedItem.toString() == "Select a Car Make" || spinner2.selectedItem == "Select a Car Model"
-             || spinner3.selectedItem == "Select a Car Color" || spinner4.selectedItem == "Select a State" || value == ""){
-             Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
-                 .show()
-         }
-         else {
-             if(!VehicleInfoActivity.fromVehicleView) {
-                 val users = HashMap<String, ArrayList<String>>()
-                     users["Cars"]= arrayListOf(carMakeSpinner.selectedItem.toString(),carModelSpinner.selectedItem.toString(),carColorSpinner.selectedItem.toString(),carStateSpinner.selectedItem.toString(),value)
+        if(spinner.selectedItem.toString() == "Select a Car Make" || spinner2.selectedItem == "Select a Car Model"
+            || spinner3.selectedItem == "Select a Car Color" || spinner4.selectedItem == "Select a State" || value == ""){
+            Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
+                .show()
+        }
+        else {
+            if(!VehicleInfoActivity.fromVehicleView) {
+                val users = HashMap<String, ArrayList<String>>()
+                users["Cars"]= arrayListOf(carMakeSpinner.selectedItem.toString(),carModelSpinner.selectedItem.toString(),carColorSpinner.selectedItem.toString(),carStateSpinner.selectedItem.toString(),value)
 
-                 db.collection("Users").document(currentFirebaseUser!!.uid)
-                     .set(users)
-                     .addOnSuccessListener { documentReference ->
-                         Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
-                         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
-                         startActivity(i)
-                     }
-                     .addOnFailureListener { e ->
-                         Log.w(TAG, "Error adding document", e)
-                     }
-             }
-             else {
-                 val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
-                 docRef.get()
-                     .addOnSuccessListener { document ->
-                         if (document != null) {
-                             carArray = document.data!!["Cars"]
-                             Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaa: " + carArray.toString())
-                             carInfo = carArray as MutableList<String>
-                             carInfo.add(carMakeSpinner.selectedItem.toString())
-                             carInfo.add(carModelSpinner.selectedItem.toString())
-                             carInfo.add(carColorSpinner.selectedItem.toString())
-                             carInfo.add(carStateSpinner.selectedItem.toString())
-                             carInfo.add(value)
+                db.collection("Users").document(currentFirebaseUser!!.uid)
+                    .set(users)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
+                        val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                        startActivity(i)
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
+            }
+            else {
+                val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
+                docRef.get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            carArray = document.data!!["Cars"]
+                            Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaa: " + carArray.toString())
+                            carInfo = carArray as MutableList<String>
+                            carInfo.add(carMakeSpinner.selectedItem.toString())
+                            carInfo.add(carModelSpinner.selectedItem.toString())
+                            carInfo.add(carColorSpinner.selectedItem.toString())
+                            carInfo.add(carStateSpinner.selectedItem.toString())
+                            carInfo.add(value)
 
-                             db.collection("Users").document(currentFirebaseUser!!.uid)
-                                 .update("Cars", carInfo)
-                                 .addOnSuccessListener { documentReference ->
-                                     if(VehicleInfoActivity.fromVehicleView) {
-                                         VehicleInfoActivity.fromVehicleView = false
-                                         VehicleViewActivity.fromVehicleInfoPage = true
-                                         val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
-                                         startActivity(i)
-                                     }
-                                     else{
-                                         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
-                                         startActivity(i)
-                                     }
-                                 }
-                                 .addOnFailureListener { e ->
-                                     Log.w(TAG, "Error adding document", e)
-                                 }
-                         } else {
-                             Log.d(VehicleViewActivity.TAG, "No such document")
+                            db.collection("Users").document(currentFirebaseUser!!.uid)
+                                .update("Cars", carInfo)
+                                .addOnSuccessListener { documentReference ->
+                                    if(VehicleInfoActivity.fromVehicleView) {
+                                        VehicleInfoActivity.fromVehicleView = false
+                                        VehicleViewActivity.fromVehicleInfoPage = true
+                                        val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
+                                        startActivity(i)
+                                    }
+                                    else{
+                                        val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                                        startActivity(i)
+                                    }
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.w(TAG, "Error adding document", e)
+                                }
+                        } else {
+                            Log.d(VehicleViewActivity.TAG, "No such document")
 
-                         }
-                     }
-             }
-         }
+                        }
+                    }
+            }
+        }
     }
 
     fun clickButton(v : View){
-       saveVehicleInfo(v)
+        saveVehicleInfo(v)
     }
 
     fun skipButton(){

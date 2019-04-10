@@ -2,7 +2,11 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
                   xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
-            android:icon="@drawable/icons8_garage_door_35px"
+            android:icon="@drawable/user_profile"
+            android:key="profile"
+            android:title="User Profile"/>
+    <Preference
+            android:icon="@drawable/icons8_garage_door_part_open_35"
             android:key="driveway"
             android:title="List Your Driveway"/>
     <Preference
@@ -20,5 +24,6 @@
     <Preference
             android:icon="@drawable/icons8_export_35"
             android:key="logout"
-            android:title="Logout"/>
+            android:title="Logout"
+    />
 </PreferenceScreen>

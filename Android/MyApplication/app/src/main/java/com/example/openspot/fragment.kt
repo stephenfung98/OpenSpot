@@ -127,9 +127,8 @@ class SettingFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.preferences, root_key)
         activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-
-        val logoutButton = findPreference("logout")
-        logoutButton.setOnPreferenceClickListener {
+        val logoutBtn = findPreference("logout")
+        logoutBtn.setOnPreferenceClickListener {
             AuthUI.getInstance()
                 .signOut(activity!!.baseContext)
                 .addOnCompleteListener {
@@ -137,6 +136,7 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             true
         }
+
         val contactUsButton = findPreference("contact")
         contactUsButton.setOnPreferenceClickListener {
             AuthUI.getInstance()
@@ -147,6 +147,11 @@ class SettingFragment : PreferenceFragmentCompat() {
         vehicleButton.setOnPreferenceClickListener {
             AuthUI.getInstance()
             startActivity(Intent(activity, VehicleViewActivity::class.java))
+            true
+        }
+        val userProfileBtn = findPreference("profile")
+        userProfileBtn.setOnPreferenceClickListener {
+            startActivity(Intent(activity, userProfile::class.java))
             true
         }
     }
