@@ -59,7 +59,7 @@ class userProfile : AppCompatActivity() {
     private fun initialize() {
         editFullName = findViewById<View>(R.id.full_name) as EditText
         editEmail = findViewById<View>(R.id.email) as EditText
-//        editDOB = findViewById<View>(R.id.dob) as EditText
+//      editDOB = findViewById<View>(R.id.dob) as EditText
         nextButton = findViewById<View>(R.id.user_profile_button) as ImageButton
 
         mDatabase = FirebaseDatabase.getInstance()
@@ -210,9 +210,9 @@ class userProfile : AppCompatActivity() {
     fun nextButton(v:View) {
         if (validForm()) {
             val i = Intent(this@userProfile, VehicleInfoActivity::class.java)
-            i.putExtra("full_name", editFullName!!.text.toString())
+            i.putExtra("fullName", editFullName!!.text.toString())
             i.putExtra("email", editEmail!!.text.toString())
-            i.putExtra("DOB", dateAssembmly())
+            i.putExtra("dateOfBirth", dateAssembmly())
 //            i.putExtra("DOB", editDOB!!.text.toString())
 
             //this code is for the next vehicle info activity to use these inputs
