@@ -557,12 +557,6 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         val value = editText.text.toString()
         var carArray: Any?
         var carInfo :MutableList<String>
-        val extras = intent.extras
-        val fullName = extras.getString("fullName")
-        val email = extras.getString("email")
-        val dateofBirth = extras.getString("dateOfBirth")
-
-
 
         val carMakeSpinner: Spinner = findViewById(R.id.spinner)
         val carModelSpinner: Spinner = findViewById(R.id.spinner2)
@@ -577,6 +571,11 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         }
         else {
             if(!VehicleInfoActivity.fromVehicleView) {
+                val extras = intent.extras
+                val fullName = extras.getString("fullName")
+                val email = extras.getString("email")
+                val dateofBirth = extras.getString("dateOfBirth")
+                Log.d(TAG,"HELLO WORLD::::")
                 val users = HashMap<String, Any?>()
                 users["fullName"]= fullName
                 users["email"]= email
@@ -596,6 +595,7 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                     }
             }
             else {
+                Log.d(TAG,"HELLLO WORLD::::")
                 val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
                 docRef.get()
                     .addOnSuccessListener { document ->

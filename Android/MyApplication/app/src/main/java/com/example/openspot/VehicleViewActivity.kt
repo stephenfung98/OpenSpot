@@ -22,7 +22,7 @@ class VehicleViewActivity : AppCompatActivity() {
 
     companion object {
         const val TAG = "VehicleViewActivity"
-        var fromVehicleInfoPage = false;
+        var fromVehicleInfoPage = false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -63,7 +63,6 @@ class userProfile : AppCompatActivity() {
         docRef.get()
             .addOnSuccessListener { document ->
                 //                    Toast.makeText(applicationContext, "" + user.uid, Toast.LENGTH_SHORT).show()
-
                 if (document.exists()) {
                     val intent = Intent(this@userProfile, NavigationActivity::class.java)
                     startActivity(intent)
@@ -110,7 +109,7 @@ class userProfile : AppCompatActivity() {
 
     private val mDateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
         mYear = year
-        mMonth = monthOfYear
+        mMonth = monthOfYear + 1
         mDay = dayOfMonth
         updateDisplay()
     }
