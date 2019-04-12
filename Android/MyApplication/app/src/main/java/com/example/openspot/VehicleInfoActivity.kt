@@ -6,10 +6,12 @@ import android.util.Log
 import android.view.View
 import com.google.firebase.firestore.FirebaseFirestore
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.EditText
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_vehicle_info.*
 
 
@@ -69,13 +71,31 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         var volkswagenModels = arrayListOf("Atlas", "Beetle", "e-Golf", "Golf", "Golf Alltrack", "Golf GTI", "Golf R", "Golf SportWagen", "Jetta", "Passat", "Tiguan", "Tiguan Limited")
         var volvoModels = arrayListOf("S60", "S90", "V60", "V90", "XC40", "XC60", "XC90")
 
+        var fromVehicleView = false
     }
     private val db = FirebaseFirestore.getInstance()
+    private val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_vehicle_info)
+
+        var backButton = findViewById<Button>(R.id.skipButton)
+        if(fromVehicleView){
+            backButton.text = "BACK"
+            backButton.setOnClickListener {
+                fromVehicleView = true
+                val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
+                startActivity(i)
+            }
+        }
+        else{
+            backButton.setOnClickListener {
+                skipButton()
+            }
+        }
 
         //*****************Car Make Spinner******************   **//
         val carMake = arrayListOf("Select a Car Make","Acura",
@@ -122,7 +142,7 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
             "Toyota",
             "Volkswagen",
             "Volvo")
-        val spinner: Spinner = findViewById(R.id.spinner)
+        val carMakeSpinner: Spinner = findViewById(R.id.spinner)
 
         val acuraAdapter = object : ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, acuraModel) {}
         val alfaRomeoAdapter = object : ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, alfaRomeoModel){}
@@ -171,7 +191,7 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
 
 
         // Initializing an ArrayAdapter
-        val dataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carMake) {
+        val carMakeDataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carMake) {
             override fun isEnabled(position:Int):(Boolean){
                 return position != 0
             }
@@ -190,192 +210,194 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                 return view
             }
         }
-        dataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        spinner.adapter = dataAdapter
-        spinner.onItemSelectedListener = object: (AdapterView.OnItemSelectedListener){
+        carMakeDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+        carMakeSpinner.adapter = carMakeDataAdapter
+
+        val carModelSpinner: Spinner = findViewById(R.id.spinner2)
+        carMakeSpinner.onItemSelectedListener = object: (AdapterView.OnItemSelectedListener){
             override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
                 var selectedItemText =  parent.getItemAtPosition(position)
                 // If user change the default selection
                 // First item is disable and it is used for hint
                 if(position > 0){
                     // Notify the selected item text
-                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                        .show()
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
                     if(position == 1){
-                        spinner2.isClickable = true
-                        spinner2.adapter = acuraAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = acuraAdapter
                     }
                     else if(position == 2){
-                        spinner2.isClickable = true
-                        spinner2.adapter = alfaRomeoAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = alfaRomeoAdapter
                     }
                     else if(position == 3){
-                        spinner2.isClickable = true
-                        spinner2.adapter = audiAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = astonMartinAdapter
                     }
                     else if(position == 4){
-                        spinner2.isClickable = true
-                        spinner2.adapter = astonMartinAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = audiAdapter
                     }
                     else if(position == 5){
-                        spinner2.isClickable = true
-                        spinner2.adapter = bentleyAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = bentleyAdapter
                     }
                     else if(position == 6){
-                        spinner2.isClickable = true
-                        spinner2.adapter = bmwAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = bmwAdapter
                     }
                     else if(position == 7){
-                        spinner2.isClickable = true
-                        spinner2.adapter = buickAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = buickAdapter
                     }
                     else if(position == 8){
-                        spinner2.isClickable = true
-                        spinner2.adapter = cadillacAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = cadillacAdapter
                     }
                     else if(position == 9){
-                        spinner2.isClickable = true
-                        spinner2.adapter = chevroletAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = chevroletAdapter
                     }
                     else if(position == 10){
-                        spinner2.isClickable = true
-                        spinner2.adapter = chryslerAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = chryslerAdapter
                     }
                     else if(position == 11){
-                        spinner2.isClickable = true
-                        spinner2.adapter = dodgeAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = dodgeAdapter
                     }
                     else if(position == 12){
-                        spinner2.isClickable = true
-                        spinner2.adapter = ferrariAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = ferrariAdapter
                     }
                     else if(position == 13){
-                        spinner2.isClickable = true
-                        spinner2.adapter = fiatAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = fiatAdapter
                     }
                     else if(position == 14){
-                        spinner2.isClickable = true
-                        spinner2.adapter = fordAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = fordAdapter
                     }
                     else if(position == 15){
-                        spinner2.isClickable = true
-                        spinner2.adapter = freightlinerAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = freightlinerAdapter
                     }
                     else if(position == 16){
-                        spinner2.isClickable = true
-                        spinner2.adapter = genesisAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = genesisAdapter
                     }
                     else if(position == 17){
-                        spinner2.isClickable = true
-                        spinner2.adapter = gmcAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = gmcAdapter
                     }
                     else if(position == 18){
-                        spinner2.isClickable = true
-                        spinner2.adapter = hondaAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = hondaAdapter
                     }
                     else if(position == 19){
-                        spinner2.isClickable = true
-                        spinner2.adapter = hyundaiAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = hyundaiAdapter
                     }
                     else if(position == 20){
-                        spinner2.isClickable = true
-                        spinner2.adapter = infinitiAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = infinitiAdapter
                     }
                     else if(position == 21){
-                        spinner2.isClickable = true
-                        spinner2.adapter = jaguarAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = jaguarAdapter
                     }
                     else if(position == 22){
-                        spinner2.isClickable = true
-                        spinner2.adapter = jeepAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = jeepAdapter
                     }
                     else if(position == 23){
-                        spinner2.isClickable = true
-                        spinner2.adapter = kiaAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = kiaAdapter
                     }
                     else if(position == 24){
-                        spinner2.isClickable = true
-                        spinner2.adapter = lamborghiniAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = lamborghiniAdapter
                     }
                     else if(position == 25){
-                        spinner2.isClickable = true
-                        spinner2.adapter = landRoverAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = landRoverAdapter
                     }
                     else if(position == 26){
-                        spinner2.isClickable = true
-                        spinner2.adapter = lexusAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = lexusAdapter
                     }
                     else if(position == 27){
-                        spinner2.isClickable = true
-                        spinner2.adapter = lincolnAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = lincolnAdapter
                     }
                     else if(position == 28){
-                        spinner2.isClickable = true
-                        spinner2.adapter = lotusAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = lotusAdapter
                     }
                     else if(position == 29){
-                        spinner2.isClickable = true
-                        spinner2.adapter = maseratiAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = maseratiAdapter
                     }
                     else if(position == 30){
-                        spinner2.isClickable = true
-                        spinner2.adapter = mazdaAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = mazdaAdapter
                     }
                     else if(position == 31){
-                        spinner2.isClickable = true
-                        spinner2.adapter = mclarenAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = mclarenAdapter
                     }
                     else if(position == 32){
-                        spinner2.isClickable = true
-                        spinner2.adapter = mercedesbenzAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = mercedesbenzAdapter
                     }
                     else if(position == 33){
-                        spinner2.isClickable = true
-                        spinner2.adapter = miniAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = miniAdapter
                     }
                     else if(position == 34){
-                        spinner2.isClickable = true
-                        spinner2.adapter = mitsubishiAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = mitsubishiAdapter
                     }
                     else if(position == 35){
-                        spinner2.isClickable = true
-                        spinner2.adapter = nissanAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = nissanAdapter
                     }
                     else if(position == 36){
-                        spinner2.isClickable = true
-                        spinner2.adapter = porscheAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = porscheAdapter
                     }
                     else if(position == 37){
-                        spinner2.isClickable = true
-                        spinner2.adapter = ramAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = ramAdapter
                     }
                     else if(position == 38){
-                        spinner2.isClickable = true
-                        spinner2.adapter = rollsroyceAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = rollsroyceAdapter
                     }
                     else if(position == 39){
-                        spinner2.isClickable = true
-                        spinner2.adapter = smartAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = smartAdapter
                     }
                     else if(position == 40){
-                        spinner2.isClickable = true
-                        spinner2.adapter = subaruAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = subaruAdapter
                     }
                     else if(position == 41){
-                        spinner2.isClickable = true
-                        spinner2.adapter = teslaAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = teslaAdapter
                     }
                     else if(position == 42){
-                        spinner2.isClickable = true
-                        spinner2.adapter = toyotaAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = toyotaAdapter
                     }
                     else if(position == 43){
-                        spinner2.isClickable = true
-                        spinner2.adapter = volkswagenAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = volkswagenAdapter
                     }
                     else{
-                        spinner2.isClickable = true
-                        spinner2.adapter = volvoAdapter
+                        carModelSpinner.isClickable = true
+                        carModelSpinner.adapter = volvoAdapter
                     }
                 }
             }
@@ -389,11 +411,10 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
 
         //*****************Car Model Spinner********************//
         val carModel = arrayListOf("Select a Car Model")
-        val spinner2: Spinner = findViewById(R.id.spinner2)
-        val dataAdapter2 = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carModel) {}
-        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner2.isClickable = false
-        spinner2.adapter = dataAdapter2
+        val carModelDataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carModel) {}
+        carModelDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        carModelSpinner.isClickable = false
+        carModelSpinner.adapter = carModelDataAdapter
 
 
         //*****************Car Color Spinner********************//
@@ -402,45 +423,45 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
             "Maroon", "Metallic", "Navy", "Orange", "Pink", "Purple", "Red", "Rose",
             "Rust", "Silver", "Tan", "Turquoise", "White", "Yellow")
 
-        val spinner3: Spinner = findViewById(R.id.spinner3)
-        val dataAdapter3 = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carColor) {
-                override fun isEnabled(position:Int):(Boolean){
-                    return position != 0
-                }
-
-                override fun getDropDownView(position: Int, convertView: View?,
-                                             parent: ViewGroup
-                ): View? {
-                    val view = super.getDropDownView(position, convertView, parent)
-                    val tv = view as TextView
-                    if (position == 0) {
-                        // Set the hint text color gray
-                        tv.setTextColor(Color.GRAY)
-                    } else {
-                        tv.setTextColor(Color.BLACK)
-                    }
-                    return view
-                }
-            }
-            dataAdapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-            spinner3.adapter = dataAdapter3
-
-        spinner3.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                    var selectedItemText =  parent.getItemAtPosition(position)
-                    // If user change the default selection
-                    // First item is disable and it is used for hint
-                    if(position > 0) {
-                        // Notify the selected item text
-                        Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                            .show()
-                    }
+        val carColorSpinner: Spinner = findViewById(R.id.spinner3)
+        val carColorDataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carColor) {
+            override fun isEnabled(position:Int):(Boolean){
+                return position != 0
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            override fun getDropDownView(position: Int, convertView: View?,
+                                         parent: ViewGroup
+            ): View? {
+                val view = super.getDropDownView(position, convertView, parent)
+                val tv = view as TextView
+                if (position == 0) {
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY)
+                } else {
+                    tv.setTextColor(Color.BLACK)
+                }
+                return view
             }
         }
+        carColorDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+        carColorSpinner.adapter = carColorDataAdapter
+
+//        carColorSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                var selectedItemText =  parent.getItemAtPosition(position)
+//                // If user change the default selection
+//                // First item is disable and it is used for hint
+//                if(position > 0) {
+//                    // Notify the selected item text
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//        }
         //*****************State Location Spinner********************//
         val carStates = arrayListOf("Select a State","Alabama",
             "Alaska",
@@ -490,8 +511,8 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
             "Wisconsin",
             "Wyoming")
 
-        val spinner4: Spinner = findViewById(R.id.spinner4)
-        val dataAdapter4 = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carStates) {
+        val carStateSpinner: Spinner = findViewById(R.id.spinner4)
+        val carStateDataAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, carStates) {
             override fun isEnabled(position:Int):(Boolean){
                 return position != 0
             }
@@ -510,65 +531,128 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
                 return view
             }
         }
-        dataAdapter4.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        spinner4.adapter = dataAdapter4
+        carStateDataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+        carStateSpinner.adapter = carStateDataAdapter
 
-        spinner4.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
-                var selectedItemText =  parent.getItemAtPosition(position)
-                // If user change the default selection
-                // First item is disable and it is used for hint
-                if(position > 0) {
-                    // Notify the selected item text
-                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        }
+//        carStateSpinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent : AdapterView<*>, view: View ,position:Int, id:Long) {
+//                var selectedItemText =  parent.getItemAtPosition(position)
+//                // If user change the default selection
+//                // First item is disable and it is used for hint
+//                if(position > 0) {
+//                    // Notify the selected item text
+//                    Toast.makeText(applicationContext, "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//        }
     }
 
+    private fun saveVehicleInfo(v :View){
+        val editText = findViewById<EditText>(R.id.edit_license)
+        val value = editText.text.toString()
+        var carArray: Any?
+        var carInfo :MutableList<String>
 
-     private fun saveVehicleInfo(view :View){
-         val editText = findViewById<EditText>(R.id.edit_license)
-         val value = editText.text.toString()
+        val carMakeSpinner: Spinner = findViewById(R.id.spinner)
+        val carModelSpinner: Spinner = findViewById(R.id.spinner2)
+        val carColorSpinner: Spinner = findViewById(R.id.spinner3)
+        val carStateSpinner: Spinner = findViewById(R.id.spinner4)
 
-         if(spinner.selectedItem.toString() == "Select a Car Make" || spinner2.selectedItem == "Select a Car Model"
-             || spinner3.selectedItem == "Select a Car Color" || spinner4.selectedItem == "Select a State" || value == ""){
-             Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
-                 .show()
-         }
-         else {
-             val user = HashMap<String, Any>()
-             user["carMake"] = spinner.selectedItem.toString()
-             user["carModel"] = spinner2.selectedItem.toString()
-             user["carColor"] = spinner3.selectedItem.toString()
-             user["state"] = spinner4.selectedItem.toString()
-             user["licensePlate"] = value
 
-             // Add a new document with a generated ID
-             db.collection("Users")
-                 .add(user)
-                 .addOnSuccessListener { documentReference ->
-                     Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                 }
-                 .addOnFailureListener { e ->
-                     Log.w(TAG, "Error adding document", e)
-                 }
+        if(spinner.selectedItem.toString() == "Select a Car Make" || spinner2.selectedItem == "Select a Car Model"
+            || spinner3.selectedItem == "Select a Car Color" || spinner4.selectedItem == "Select a State" || value == ""){
+            Toast.makeText(applicationContext, "Please fill out all information", Toast.LENGTH_LONG)
+                .show()
+        }
+        else {
+            if(!VehicleInfoActivity.fromVehicleView) {
+                val extras = intent.extras
+                val fullName = extras.getString("fullName")
+                val email = extras.getString("email")
+                val dateofBirth = extras.getString("dateOfBirth")
+                Log.d(TAG,"HELLO WORLD::::")
+                val users = HashMap<String, Any?>()
+                users["fullName"]= fullName
+                users["email"]= email
+                users["dateOfBirth"]= dateofBirth
+                users["phoneNumber"]= currentFirebaseUser!!.phoneNumber
+                users["Cars"]= arrayListOf(carMakeSpinner.selectedItem.toString(),carModelSpinner.selectedItem.toString(),carColorSpinner.selectedItem.toString(),carStateSpinner.selectedItem.toString(),value)
 
-             val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
-             startActivity(i)
-         }
+                db.collection("Users").document(currentFirebaseUser!!.uid)
+                    .set(users)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
+                        val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                        startActivity(i)
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
+            }
+            else {
+                Log.d(TAG,"HELLLO WORLD::::")
+                val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
+                docRef.get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            carArray = document.data!!["Cars"]
+                            Log.d(VehicleViewActivity.TAG, "DocumentSnapshot dataaaa: " + carArray.toString())
+                            carInfo = carArray as MutableList<String>
+                            carInfo.add(carMakeSpinner.selectedItem.toString())
+                            carInfo.add(carModelSpinner.selectedItem.toString())
+                            carInfo.add(carColorSpinner.selectedItem.toString())
+                            carInfo.add(carStateSpinner.selectedItem.toString())
+                            carInfo.add(value)
+
+                            db.collection("Users").document(currentFirebaseUser!!.uid)
+                                .update("Cars", carInfo)
+                                .addOnSuccessListener { documentReference ->
+                                    if(VehicleInfoActivity.fromVehicleView) {
+                                        VehicleInfoActivity.fromVehicleView = false
+                                        VehicleViewActivity.fromVehicleInfoPage = true
+                                        val i = Intent(this@VehicleInfoActivity, VehicleViewActivity::class.java)
+                                        startActivity(i)
+                                    }
+                                    else{
+                                        val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                                        startActivity(i)
+                                    }
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.w(TAG, "Error adding document", e)
+                                }
+                        } else {
+                            Log.d(VehicleViewActivity.TAG, "No such document")
+
+                        }
+                    }
+            }
+        }
     }
 
     fun clickButton(v : View){
         saveVehicleInfo(v)
     }
 
-    fun skipButton(v : View){
+    fun skipButton(){
+        val users = HashMap<String, ArrayList<String>>()
+        users["Cars"]= arrayListOf()
+        db.collection("Users").document(currentFirebaseUser!!.uid)
+            .set(users)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: HELLLLLLLLLLO")
+                val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
+                startActivity(i)
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+
         val i = Intent(this@VehicleInfoActivity, NavigationActivity::class.java)
         startActivity(i)
     }

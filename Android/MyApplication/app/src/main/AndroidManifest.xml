@@ -15,8 +15,32 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.Launcher">
-        <activity android:name=".userProfile">
+        <activity android:name=".EditProfile"
+                  android:parentActivityName=".NavigationActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.openspot.NavigationActivity"/>
         </activity>
+        <activity android:name=".EditVehicleInfoActivity">
+        </activity>
+        <activity android:name=".VehicleViewActivity">
+        </activity>
+        <activity
+                android:name=".ContactActivity"
+                android:parentActivityName=".NavigationActivity"/>
+
+        <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.openspot.NavigationActivity"/>
+
+        <activity
+                android:name=".userProfile"
+                android:parentActivityName=".NavigationActivity"/>
+
+        <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.openspot.NavigationActivity"/>
+
         <activity android:name=".VehicleInfoActivity">
         </activity>
         <activity
