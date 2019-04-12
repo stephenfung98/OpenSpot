@@ -557,6 +557,11 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         val value = editText.text.toString()
         var carArray: Any?
         var carInfo :MutableList<String>
+        val extras = intent.extras
+        val fullName = extras.getString("fullName")
+        val email = extras.getString("email")
+        val dateofBirth = extras.getString("dateOfBirth")
+
 
 
         val carMakeSpinner: Spinner = findViewById(R.id.spinner)
@@ -572,7 +577,11 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         }
         else {
             if(!VehicleInfoActivity.fromVehicleView) {
-                val users = HashMap<String, ArrayList<String>>()
+                val users = HashMap<String, Any>()
+                users["fullName"]= fullName
+                users["email"]= email
+                users["dateOfBirth"]= dateofBirth
+                users["phoneNumber"]= db.collection("Users").document(currentFirebaseUser!!.phoneNumber.toString())
                 users["Cars"]= arrayListOf(carMakeSpinner.selectedItem.toString(),carModelSpinner.selectedItem.toString(),carColorSpinner.selectedItem.toString(),carStateSpinner.selectedItem.toString(),value)
 
                 db.collection("Users").document(currentFirebaseUser!!.uid)

@@ -6,7 +6,7 @@
             android:key="profile"
             android:title="User Profile"/>
     <Preference
-            android:icon="@drawable/icons8_garage_door_part_open_35"
+            android:icon="@drawable/icons8_garage_door_35px"
             android:key="driveway"
             android:title="List Your Driveway"/>
     <Preference
@@ -20,7 +20,8 @@
     <Preference
             android:icon="@drawable/icons8_support_35px"
             android:key="contact"
-            android:title="Contact us" android:layout_height="match_parent"/>
+            android:title="Contact us"
+            android:layout_height="match_parent"/>
     <Preference
             android:icon="@drawable/icons8_export_35"
             android:key="logout"

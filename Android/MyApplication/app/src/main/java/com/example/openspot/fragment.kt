@@ -22,7 +22,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.fragment_home.*
 import com.google.android.gms.location.LocationServices
-
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class ReservationFragment : Fragment() {
@@ -43,7 +44,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
     private var gMapView: MapView? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
-
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -124,6 +124,10 @@ class HomeFragment : Fragment(),OnMapReadyCallback{
 
 class SettingFragment : PreferenceFragmentCompat() {
 
+    //Firebase for User Profile title replacement with Users Full name
+    private val db = FirebaseFirestore.getInstance()
+    private val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, root_key: String?) {
         setPreferencesFromResource(R.xml.preferences, root_key)
         activity!!.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -150,8 +154,15 @@ class SettingFragment : PreferenceFragmentCompat() {
             true
         }
         val userProfileBtn = findPreference("profile")
+        val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document!=null){
+                    userProfileBtn.title = document.data!!["fullName"].toString()
+            }}
         userProfileBtn.setOnPreferenceClickListener {
-            startActivity(Intent(activity, userProfile::class.java))
+            AuthUI.getInstance()
+            startActivity(Intent(activity, EditProfile::class.java))
             true
         }
     }

@@ -27,10 +27,10 @@ class userProfile : AppCompatActivity() {
     private var editDOB: EditText? = null
     private var nextButton: ImageButton? = null
 
-    //Firebase references
-    private var mDatabaseReference: DatabaseReference? = null
-    private var mDatabase: FirebaseDatabase? = null
-    private var mAuth: FirebaseAuth? = null
+//    //Firebase references
+//    private var mDatabaseReference: DatabaseReference? = null
+//    private var mDatabase: FirebaseDatabase? = null
+//    private var mAuth: FirebaseAuth? = null
 
 //    //global variables
 //    private var fullName: String? = null
@@ -47,11 +47,14 @@ class userProfile : AppCompatActivity() {
     //findViewById(R.id.myDatePickerButton) as Button
     var DATE_DIALOG_ID = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.FragmentTheme)
         setContentView(R.layout.activity_user_profile)
+
+        supportActionBar?.title = "User Profile"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        NavigationActivity.fromUserProfile = true
 
         initialize()
     }
@@ -62,9 +65,9 @@ class userProfile : AppCompatActivity() {
 //      editDOB = findViewById<View>(R.id.dob) as EditText
         nextButton = findViewById<View>(R.id.user_profile_button) as ImageButton
 
-        mDatabase = FirebaseDatabase.getInstance()
-        mDatabaseReference = mDatabase!!.reference!!.child("Users")
-        mAuth = FirebaseAuth.getInstance()
+//        mDatabase = FirebaseDatabase.getInstance()
+//        mDatabaseReference = mDatabase!!.reference!!.child("Users")
+//        mAuth = FirebaseAuth.getInstance()
 
 
         mPickDate = findViewById(R.id.myDatePickerButton)
@@ -218,11 +221,12 @@ class userProfile : AppCompatActivity() {
             //this code is for the next vehicle info activity to use these inputs
 //            val extras = intent.extras
 //            if (extras != null) {
-//                val value = extras.getString("full_name")
+//                val value = extras.getString("fullName")
 //                val value = extras.getString("email")
-//                val value = extras.getString("DOB")
+//                val value = extras.getString("dateOfBirth")
 //                //The key argument here must match that used in the other activity
 //            }
+
 
             startActivity(i)
             finish()
