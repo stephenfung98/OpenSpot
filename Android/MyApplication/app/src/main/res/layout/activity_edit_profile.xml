@@ -11,10 +11,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:textSize="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:textSize="22dp"
             android:inputType="textPersonName"
-            android:background="#666"
-            android:textColor="#333"
+            android:textColor="#A9A9A9"
     />
 
     <EditText
@@ -34,9 +35,9 @@
             android:layout_below="@id/emailUpdate"
             android:text="Date of Birth"
             android:layout_marginHorizontal="8dp"
-            android:textSize="15dp"
-            android:background="#666"
-            android:textColor="#333"
+            android:layout_marginTop="8dp"
+            android:textSize="22dp"
+            android:textColor="#A9A9A9"
     />
 
     <TextView
@@ -46,8 +47,10 @@
             android:layout_marginHorizontal="8dp"
             android:layout_below="@+id/birthdayView"
             android:text="Phone Number"
-            android:background="#666"
-            android:textColor="#333"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:textSize="22dp"
+            android:textColor="#A9A9A9"
     />
 
 

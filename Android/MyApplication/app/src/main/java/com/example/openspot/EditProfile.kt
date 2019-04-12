@@ -28,7 +28,7 @@ class EditProfile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.FragmentTheme)
         setContentView(R.layout.activity_edit_profile)
 
         supportActionBar?.title = "Edit Profile"
