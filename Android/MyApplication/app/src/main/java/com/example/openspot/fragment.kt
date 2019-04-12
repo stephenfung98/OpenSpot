@@ -154,12 +154,15 @@ class SettingFragment : PreferenceFragmentCompat() {
             true
         }
         val userProfileBtn = findPreference("profile")
-        val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document!=null){
-                    userProfileBtn.title = document.data!!["fullName"].toString()
-            }}
+        if(currentFirebaseUser != null) {
+            val docRef = db.collection("Users").document(currentFirebaseUser!!.uid)
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        userProfileBtn.title = document.data!!["fullName"].toString()
+                    }
+                }
+        }
         userProfileBtn.setOnPreferenceClickListener {
             AuthUI.getInstance()
             startActivity(Intent(activity, EditProfile::class.java))

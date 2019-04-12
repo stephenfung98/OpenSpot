@@ -577,11 +577,11 @@ class VehicleInfoActivity : AppCompatActivity(),AdapterView.OnItemSelectedListen
         }
         else {
             if(!VehicleInfoActivity.fromVehicleView) {
-                val users = HashMap<String, Any>()
+                val users = HashMap<String, Any?>()
                 users["fullName"]= fullName
                 users["email"]= email
                 users["dateOfBirth"]= dateofBirth
-                users["phoneNumber"]= db.collection("Users").document(currentFirebaseUser!!.phoneNumber.toString())
+                users["phoneNumber"]= currentFirebaseUser!!.phoneNumber
                 users["Cars"]= arrayListOf(carMakeSpinner.selectedItem.toString(),carModelSpinner.selectedItem.toString(),carColorSpinner.selectedItem.toString(),carStateSpinner.selectedItem.toString(),value)
 
                 db.collection("Users").document(currentFirebaseUser!!.uid)

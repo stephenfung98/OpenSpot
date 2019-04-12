@@ -16,6 +16,7 @@ import java.util.*
 import java.util.regex.Pattern
 import android.app.DatePickerDialog
 import android.app.Dialog
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_user_profile.*
 
 
@@ -26,6 +27,9 @@ class userProfile : AppCompatActivity() {
     private var editEmail: EditText? = null
     private var editDOB: EditText? = null
     private var nextButton: ImageButton? = null
+    private val db = FirebaseFirestore.getInstance()
+    val user = FirebaseAuth.getInstance().currentUser
+
 
 //    //Firebase references
 //    private var mDatabaseReference: DatabaseReference? = null
@@ -54,7 +58,18 @@ class userProfile : AppCompatActivity() {
 
         supportActionBar?.title = "User Profile"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        NavigationActivity.fromUserProfile = true
+
+        val docRef = db.collection("Users").document(user!!.uid)
+        docRef.get()
+            .addOnSuccessListener { document ->
+                //                    Toast.makeText(applicationContext, "" + user.uid, Toast.LENGTH_SHORT).show()
+
+                if (document.exists()) {
+                    val intent = Intent(this@userProfile, NavigationActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
 
         initialize()
     }

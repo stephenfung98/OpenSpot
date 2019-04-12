@@ -33,7 +33,6 @@ class EditProfile : AppCompatActivity() {
 
         supportActionBar?.title = "Edit Profile"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        NavigationActivity.fromEditProfile = true
 
         initialize()
 
@@ -86,6 +85,7 @@ class EditProfile : AppCompatActivity() {
                     Log.d(VehicleInfoActivity.TAG, "DocumentSnapshot added with ID: Saved boi")
                     Toast.makeText(applicationContext, "Email Saved", Toast.LENGTH_LONG)
                         .show()
+                    NavigationActivity.fromEditProfile = true
                     val i = Intent(this@EditProfile, NavigationActivity::class.java)
                     startActivity(i)
                     finish()
