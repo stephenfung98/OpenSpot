@@ -32,11 +32,13 @@ Requirements
   - iPhone or iPhone simulator
   
 <h2> Android Installation </h2>
+
   - Download and unzip the github project in a folder
   - Go to Android studio and open "Files" then import the project 
   - Wait for the gradle to finish building then Run the project
 
 Requirements
+
   - Minimum API SDK Level 24
   - Android or android emulator 
     
