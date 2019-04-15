@@ -40,6 +40,6 @@ Requirements
 Requirements
 
   - Minimum API SDK Level 24
-  - Android or android emulator 
+  - Android phone or Android emulator 
     
   
