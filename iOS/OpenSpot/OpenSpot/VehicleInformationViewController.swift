@@ -219,7 +219,8 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
             "fullName": fullName as Any,
             "email": email as Any,
             "dateOfBirth": dateOfBirth as Any,
-            "Cars": []
+            "Cars": [],
+            "Addresses": []
             ])
     }
     
@@ -245,7 +246,8 @@ class VehicleInformationViewController: UIViewController, UITextFieldDelegate, U
                     "fullName": fullName as Any,
                     "email": email as Any,
                     "dateOfBirth": dateOfBirth as Any,
-                    "Cars":[make.text!,model.text!,color.text!,state.text!,license.text!]
+                    "Cars":[make.text!,model.text!,color.text!,state.text!,license.text!],
+                    "Addresses": []
                     ])
             }else{
                 let user = db.collection("Users").document((currentUser?.uid)!)
