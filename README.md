@@ -21,3 +21,12 @@ https://app.zenhub.com/workspaces/openspotworkspace-5c621c61a447ea188288cc64/boa
   - Earn a side income for unused driveways
   - Less congestion for safety
 
+<h2> iOS Installation </h2>
+
+  - Download the repository
+  - Open /OpenSpot/iOS/OpenSpot/OpenSpot.xcworkspace
+  - Command-R to run
+  
+Requirements
+  - Xcode version >= 10.2
+  - iPhone or iPhone simulator
