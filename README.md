@@ -30,3 +30,14 @@ https://app.zenhub.com/workspaces/openspotworkspace-5c621c61a447ea188288cc64/boa
 Requirements
   - Xcode version >= 10.2
   - iPhone or iPhone simulator
+  
+<h2> Android Installation </h2>
+  - Download and unzip the github project in a folder
+  - Go to Android studio and open "Files" then import the project 
+  - Wait for the gradle to finish building then Run the project
+
+Requirements
+  - Minimum API SDK Level 24
+  - Android or android emulator 
+    
+  
