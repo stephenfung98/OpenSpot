@@ -34,7 +34,8 @@ Requirements
 <h2> Android Installation </h2>
 
   - Download and unzip the github project in a folder
-  - Go to Android studio and open "Files" then import the project 
+  - Go to Android studio and open "Files" then import the project
+  - Enter into the directory Openspot/Android/MyApplication
   - Wait for the gradle to finish building then Run the project
 
 Requirements
