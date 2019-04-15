@@ -42,4 +42,6 @@ Requirements
   - Minimum API SDK Level 24
   - Android phone or Android emulator 
     
-  
+<h2> User stories and acceptance tests </h2>
+
+  - https://github.com/jayll/OpenSpot/issues
