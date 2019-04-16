@@ -15,6 +15,7 @@
 		3E3C9C9722176FB000A88600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3C9C9522176FB000A88600 /* LaunchScreen.storyboard */; };
 		3E3C9CA222176FB000A88600 /* OpenSpotTestsSprint1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C9CA122176FB000A88600 /* OpenSpotTestsSprint1.swift */; };
 		3E3C9CAD22176FB000A88600 /* OpenSpotUITestsSprint1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C9CAC22176FB000A88600 /* OpenSpotUITestsSprint1.swift */; };
+		3E4B50032265726900CF6B29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B50022265726900CF6B29 /* GoogleService-Info.plist */; };
 		3E5CA0AB22193BD8009954D7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CA0AA22193BD8009954D7 /* ThirdViewController.swift */; };
 		3E5CA0B2221E1FD1009954D7 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CA0B1221E1FD1009954D7 /* MenuOptionCell.swift */; };
 		3E5CA0B4221E2022009954D7 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CA0B3221E2022009954D7 /* MenuOption.swift */; };
@@ -31,7 +32,6 @@
 		3ED288E5223481C9007E8256 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED288E4223481C9007E8256 /* UITextFieldExtension.swift */; };
 		9C5D93AE22505C3500011FB7 /* VehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D93AD22505C3500011FB7 /* VehicleViewController.swift */; };
 		9C5D93B0225170D700011FB7 /* VehicleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D93AF225170D700011FB7 /* VehicleOption.swift */; };
-		9C5D93BA22643BCC00011FB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5D93B922643BCC00011FB7 /* GoogleService-Info.plist */; };
 		9CD5978C2241F60F00302BB1 /* OpenSpotFirebaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD5978B2241F60F00302BB1 /* OpenSpotFirebaseUI.swift */; };
 		D4957764D6581D847C9AA024 /* Pods_OpenSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9C1319A1530BF5B1CAC992 /* Pods_OpenSpotTests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +85,7 @@
 		3E3C9CA822176FB000A88600 /* OpenSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C9CAC22176FB000A88600 /* OpenSpotUITestsSprint1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSpotUITestsSprint1.swift; sourceTree = "<group>"; };
 		3E3C9CAE22176FB000A88600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4B50022265726900CF6B29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E5CA0AA22193BD8009954D7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		3E5CA0B1221E1FD1009954D7 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		3E5CA0B3221E2022009954D7 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		5EA5A6ABAACA54187062F90F /* Pods-OpenSpotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSpotTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenSpotTests/Pods-OpenSpotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C5D93AD22505C3500011FB7 /* VehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewController.swift; sourceTree = "<group>"; };
 		9C5D93AF225170D700011FB7 /* VehicleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleOption.swift; sourceTree = "<group>"; };
-		9C5D93B922643BCC00011FB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CD5978522361B8E00302BB1 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD5978B2241F60F00302BB1 /* OpenSpotFirebaseUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSpotFirebaseUI.swift; sourceTree = "<group>"; };
 		B2C58D57680DEC30632C6525 /* Pods_OpenSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +194,7 @@
 				3E5CA0B5221E29A1009954D7 /* Assets.xcassets */,
 				3E3C9C9022176FAE00A88600 /* Main.storyboard */,
 				3E3C9C9522176FB000A88600 /* LaunchScreen.storyboard */,
-				9C5D93B922643BCC00011FB7 /* GoogleService-Info.plist */,
+				3E4B50022265726900CF6B29 /* GoogleService-Info.plist */,
 				3E3C9C9822176FB000A88600 /* Info.plist */,
 			);
 			path = OpenSpot;
@@ -353,8 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C9C9722176FB000A88600 /* LaunchScreen.storyboard in Resources */,
+				3E4B50032265726900CF6B29 /* GoogleService-Info.plist in Resources */,
 				3E5CA0B6221E29A1009954D7 /* Assets.xcassets in Resources */,
-				9C5D93BA22643BCC00011FB7 /* GoogleService-Info.plist in Resources */,
 				3E3C9C9222176FAE00A88600 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
