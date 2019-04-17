@@ -36,6 +36,7 @@ Requirements
   - Download and unzip the github project in a folder
   - Go to Android studio and open "Files" then import the project
   - Enter into the directory Openspot/Android/MyApplication else you will receive an error stating "Registered as a Git root, but no Git     repositories were found there" 
+  -On the top go to Tools. Click on firebase and then go to authentication and email and password authentication and "Connect to      Firebase" 
   - Wait for the gradle to finish building then Run the project
 
 Requirements
