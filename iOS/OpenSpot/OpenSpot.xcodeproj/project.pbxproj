@@ -34,6 +34,7 @@
 		9C5D93B0225170D700011FB7 /* VehicleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D93AF225170D700011FB7 /* VehicleOption.swift */; };
 		9CD5978C2241F60F00302BB1 /* OpenSpotFirebaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD5978B2241F60F00302BB1 /* OpenSpotFirebaseUI.swift */; };
 		D4957764D6581D847C9AA024 /* Pods_OpenSpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9C1319A1530BF5B1CAC992 /* Pods_OpenSpotTests.framework */; };
+		F419C02D2267BBAF00F832F3 /* VehicleInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C02C2267BBAF00F832F3 /* VehicleInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		9CD5978522361B8E00302BB1 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD5978B2241F60F00302BB1 /* OpenSpotFirebaseUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSpotFirebaseUI.swift; sourceTree = "<group>"; };
 		B2C58D57680DEC30632C6525 /* Pods_OpenSpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F419C02C2267BBAF00F832F3 /* VehicleInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInformationViewController.swift; sourceTree = "<group>"; };
 		FA9C1319A1530BF5B1CAC992 /* Pods_OpenSpotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenSpotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 				9CD5978B2241F60F00302BB1 /* OpenSpotFirebaseUI.swift */,
 				3ED288E2223384B8007E8256 /* UserInformationViewController.swift */,
 				3ED288E022338442007E8256 /* VehicleInformationViewController.swift */,
+				F419C02C2267BBAF00F832F3 /* VehicleInformationViewController.swift */,
 				9C5D93AD22505C3500011FB7 /* VehicleViewController.swift */,
 				3E3C9C8E22176FAE00A88600 /* SecondViewController.swift */,
 				3E5CA0AA22193BD8009954D7 /* ThirdViewController.swift */,
@@ -631,6 +634,7 @@
 				3EAC65BF226433C10048D6E3 /* ReservationsOptionCell.swift in Sources */,
 				3ED288E122338442007E8256 /* VehicleInformationViewController.swift in Sources */,
 				3E3C9C8D22176FAE00A88600 /* FirstViewController.swift in Sources */,
+				F419C02D2267BBAF00F832F3 /* VehicleInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
