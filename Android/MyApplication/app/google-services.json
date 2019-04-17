@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "109672769853-frs8o05blbgp7j55opeoac6ks8fs5vm2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.openspot",
+            "certificate_hash": "684706f50555622a61a208aac1c04ebabf5a6bfb"
+          }
+        },
+        {
           "client_id": "109672769853-tp3bqsj8u8stvqrur65d1j6sul6qph9d.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -41,11 +49,7 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "109672769853-tp3bqsj8u8stvqrur65d1j6sul6qph9d.apps.googleusercontent.com",
@@ -59,9 +63,6 @@
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
