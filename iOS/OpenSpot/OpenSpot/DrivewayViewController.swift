@@ -17,21 +17,29 @@ class DrivewayViewController : UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var availablitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var priceSlide: UISlider!
+    
     @IBAction func priceSlider(_ sender: UISlider) {
         priceLabel.text = "$" + String(format: "%.2f", sender.value.rounded()) + "/hr"
     }
+    
+    // changing this to be global for more modularity, doesn't need to be stateful to finishClicked()
+    let db = Firestore.firestore()
+    let currentUser = Auth.auth().currentUser
+    
+    // loading view
+    var boxView = UIView()
+    
     @IBAction func finishClicked(_ sender: Any) {
         if addressTextView.text == ""{
             showErrorMessage(message: "Enter your driveway address")
         }
         else{
             if addressIndex == nil{
-            let db = Firestore.firestore()
-            let currentUser = Auth.auth().currentUser
+            
             db.collection("Users").document((currentUser?.uid)!).getDocument {(value, Error) in
                 let getAddressesArray = value!["Addresses"] as? [String]
                 self.addressesArray = [self.addressTextView.text!, self.lat, self.long, String(format: "%.2f", self.priceSlide.value.rounded()), String(self.availablitySegmentedControl.selectedSegmentIndex)]
-                db.collection("Users").document((currentUser?.uid)!).updateData([
+                self.db.collection("Users").document((self.currentUser?.uid)!).updateData([
                     "Addresses": getAddressesArray! + self.addressesArray])
                 let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "DrivewayListViewController") as! DrivewayListViewController
                 self.show(destinationVC, sender: nil)
@@ -69,7 +77,66 @@ class DrivewayViewController : UIViewController {
         fillInformation()
     }
     
-    func fillInformation (){
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // loading animation
+        addLoader()
+        
+        retrieveStatus(completion: {(index) in
+            
+            // when view appears determine if their current status is active or inactive
+            // retrieve state from database and set
+            
+            self.availablitySegmentedControl.selectedSegmentIndex = index
+            
+            // stopping loader
+            self.boxView.removeFromSuperview()
+        })
+    }
+    
+    func addLoader() {
+        // You only need to adjust this frame to move it anywhere you want
+        boxView = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25, width: 180, height: 50))
+        boxView.backgroundColor = UIColor.white
+        boxView.alpha = 0.8
+        boxView.layer.cornerRadius = 10
+        
+        //Here the spinnier is initialized
+        let activityView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        activityView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityView.startAnimating()
+        
+        let textLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 200, height: 50))
+        textLabel.textColor = UIColor.gray
+        textLabel.text = "Updating"
+        
+        boxView.addSubview(activityView)
+        boxView.addSubview(textLabel)
+        
+        view.addSubview(boxView)
+    }
+    
+    func retrieveStatus(completion: @escaping (_ response_:Int) -> ()) {
+        
+        // 0=inactive & 1=active
+        
+        let currentUser = Auth.auth().currentUser
+        self.db.collection("Users").document((currentUser?.uid)!).getDocument {(value, Error) in
+            
+            if (Error == nil) {
+                let array_type = value?.get("Addresses") as! NSArray
+                let index = Int((array_type[4] as! NSString).doubleValue)
+                print("retrieving the index: \(index)")
+                completion(index)
+            } else {
+                print("error: \(String(describing: Error))")
+                // returning 0 because database issues shouldn't cause app to completely die
+                completion(0)
+            }
+        }
+    }
+    
+    func fillInformation() {
         if addressIndex != nil{
             let db = Firestore.firestore()
             let currentUser = Auth.auth().currentUser
